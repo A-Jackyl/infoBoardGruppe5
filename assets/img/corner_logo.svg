@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96.201" height="94.209" viewBox="0 0 96.201 94.209">
+  <defs>
+    <filter id="Path_3" x="0" y="0" width="96.201" height="94.209" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_8" x="45.331" y="16.625" width="44.24" height="33.868" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_15" data-name="Group 15" transform="translate(0 0)">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_3)">
+      <path id="Path_3-2" data-name="Path 3" d="M314.942,23.477a45.606,45.606,0,1,0,20.913,30.089l-7.875,1.541a37.581,37.581,0,1,1-17.234-24.8Z" transform="translate(-245.5 -16.76)" fill="#6b184e"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_8)">
+      <rect id="Rectangle_8-2" data-name="Rectangle 8" width="42.194" height="8.146" transform="matrix(0.82, -0.57, 0.57, 0.82, 45.33, 40.82)" fill="#6b184e"/>
+    </g>
+  </g>
+</svg>

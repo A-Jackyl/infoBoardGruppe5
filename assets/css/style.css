@@ -1,0 +1,404 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --black: #3A3A3A;
+    --blue: #54BBFD;
+    --blue_dark: #A6CFDE;
+    --blue_pale: #DDFBFF;
+    --blue_pale_2: #B0DFF0;
+    --cyan: #7DFFFF;
+    --green: #EAFF79;
+    --green_pale: #FDFBE6;
+    --pink_pale:#FBCEEF;
+    --pink: #FC6985;
+    --purple: #D0A0FF;
+    --purple_dark: #F0BBF9;
+    --orange: #FECC7F;
+    --orange_dark: #FDB64C;
+    --magenta: #6B184E;
+    --purple_pale: #FAE0F6;
+    --orange_bus: #FFB640;
+
+}
+
+@font-face {
+    font-family: 'digitalFont';
+    src: url(../fonts/VCR_OSD_MONO_1.001.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'handwritten';
+    src: url(../fonts/Caveat-VariableFont_wght.ttf);
+}
+
+body {
+    background-image: url(../img/background.svg);
+    color: var(--black);
+    font-family: 'digitalFont', sans-serif;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p {
+    filter: drop-shadow(1px 1px 0px rgba(0,0,0,.1));
+}
+
+.window {
+    position: relative;
+}
+
+.window_content {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--green_pale);
+    border: 2px solid var(--black);
+    height: 100%;
+}
+
+.window_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transform: translate(5px, 5px);
+    border: 2px solid var(--black);
+    border-radius: 8px;
+}
+
+#wb1 {
+    background-color: #88C0E4;
+    transform: translate(5px, 5px);
+    z-index: -10;
+}
+
+#wb2 {
+    background-color: #6580B7;
+    transform: translate(10px, 10px);
+    z-index: -11;
+}
+
+#wb3 {
+    background-color: #F3812C;
+    transform: translate(5px, 5px);
+    z-index: -10;
+}
+
+#wb4 {
+    background-color: #D38744;
+    transform: translate(10px, 10px);
+    z-index: -11;
+}
+
+#wb5 {
+    background-color: #E68598;
+    transform: translate(5px, 5px);
+    z-index: -10;
+}
+
+#wb6 {
+    background-color: #C66578;
+    transform: translate(10px, 10px);
+    z-index: -11;
+}
+
+#wb7 {
+    background-color: #BF96D5;
+    transform: translate(5px, 5px);
+    z-index: -10;
+}
+
+#wb8 {
+    background-color: #B968C7;
+    transform: translate(10px, 10px);
+    z-index: -11;
+}
+
+.window_top {
+    background-color: var(--pink);
+    border-bottom: 2px solid var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding-inline: .5rem;
+}
+
+.window_top img {
+    height: 20px;
+    margin: 0px;
+}
+
+.window_buttons {
+    align-self: center;
+    margin-right: 5px;
+}
+
+.table {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+    "title title . . ."
+    "clock class class meals meals"
+    "bus class class meals meals"
+    "bus class class weather wifi";
+}
+
+.table_card {
+    margin: 12px;
+}
+
+#title {
+    grid-area: title;
+}
+
+#logo {
+    width: 400px;
+    justify-self: center;
+    margin: 10px auto;
+    display: block;
+}
+
+#clock {
+    grid-area: clock;
+    
+}
+
+#clock_text {
+    text-align: center;
+    font-size: 2rem;
+    margin-block: 2rem;
+}
+
+#current_time {
+    font-size: 4rem;
+}
+
+#current_date {
+    font-size: 2.2rem;
+}
+
+#clock .window_top {
+    background-color: var(--cyan);
+}
+
+#bus_schedule {
+    grid-area: bus;
+    
+}
+
+#bus_schedule .window_top {
+    background-color: var(--orange_bus);
+}
+
+.bus_times {
+    margin-block: 3rem;
+}
+
+.bus_time_item {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 1rem;
+    align-items: center;
+}
+
+.bus_number {
+    background-color: var(--orange_bus);
+    border-radius: 3px;
+    padding: .3rem;
+    border: 2px solid var(--black);
+}
+
+#class_schedule {
+    grid-area: class;
+    
+}
+
+#schedule_title {
+    display: flex;
+    align-items: center;
+}
+
+#schedule_title * {
+    margin-right: 1rem;   
+}
+
+#meals {
+    grid-area: meals;
+    
+}
+
+#meals .window_top {
+    background-color: var(--purple_dark);
+}
+
+.note {
+    font-family: 'handwritten';
+    position: relative;
+    width: 100%;
+}
+
+.note_top {
+    width: 100%;
+    height: 10px;
+    background-color: #E76465;
+    filter: drop-shadow(0px 5px 0px rgba(0,0,0,.2));
+}
+
+#note_top_bl {
+    background-color: var(--blue);
+    
+}
+
+.note_content {
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,.2));
+    width: 100%;
+}
+
+.note_content_wds {
+    height: 280px;
+    aspect-ratio: 1/1;
+    background-color: var(--orange);
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 100%, 0% 90%, 0% 0%);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.note_content_wds p:first-of-type {
+    padding-top: 2rem;
+}
+
+.note_flip {
+    background-color: var(--orange_dark);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 138px;
+    height: 30px;
+}
+
+.note_pin {
+    position: absolute;
+    filter: unset;
+    top: -15px;
+    right: 40px;
+    height: 110px;
+}
+
+#weather {
+    grid-area: weather;
+    
+}
+
+#wifi {
+    grid-area: wifi;
+}
+
+#cat {
+    position: absolute;
+    top: -47px;
+    left: 0;
+    width: 100px;
+}
+
+.taskbar {
+    background-color: var(--blue_dark);
+    width: 100%;
+    height: 64px;
+    position: absolute;
+    bottom: 0;
+    border-top: 3px solid var(--magenta);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#taskbar_left {
+    display: flex;
+    position: absolute;
+    left: 0;
+    gap: 1.5rem;
+    align-items: center;
+    height: 100%;
+}
+
+#taskbar_logo {
+    background-color: var(--blue_pale_2);
+    height: 100%;
+    width: 60px;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 0px 0px rgba(0,0,0,.2));
+    left: 0;
+}
+
+#taskbar_logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+#searchbar {
+    background-color: #fff;
+    border: 3px solid var(--magenta);
+    border-radius: 50px;
+    width: 300px;
+    height: 40px;
+}
+
+#searcbar_line {
+    height: 40px;
+    border-right: 3px solid var(--magenta);
+}
+
+#taskbar_icons {
+    background-color: var(--blue_pale);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    border-radius: 20px;
+    height: 50px;
+    gap: 2rem;
+    margin: 0;
+    filter: drop-shadow(5px 10px 10px rgba(0,0,0,.1));
+}
+
+#taskbar_icons img {
+    height: 40px;
+}
+
+#taskbar_right {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    gap: 2rem;
+}
+
+#taskbar_status_icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#taskbar_status_icons img, #taskbar_status_icons svg {
+    height: 20px;
+}
+
+#taskbar_time {
+    background-color: var(--blue_pale_2);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--magenta);
+    right: 0;
+    padding-inline: 2rem;
+    filter: drop-shadow(-5px 0px 0px rgba(0,0,0,.2));
+}

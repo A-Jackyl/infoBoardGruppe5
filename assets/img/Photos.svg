@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="98" viewBox="0 0 98 98">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f89b35"/>
+      <stop offset="1" stop-color="#fec229"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffe836"/>
+      <stop offset="1" stop-color="#dfdd31"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c7db43"/>
+      <stop offset="1" stop-color="#96cc6a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6ababc"/>
+      <stop offset="1" stop-color="#6ac385"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#69b7e5"/>
+      <stop offset="1" stop-color="#87a1d3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#968ec4"/>
+      <stop offset="1" stop-color="#b58ec1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e2768d"/>
+      <stop offset="1" stop-color="#cd8cbd"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f26568"/>
+      <stop offset="1" stop-color="#f37d4f"/>
+    </linearGradient>
+  </defs>
+  <g id="Photos" opacity="0.829">
+    <rect id="Origin_Color" data-name="Origin Color" width="98" height="98" rx="12" fill="#fff"/>
+    <g id="The_Petals" data-name="The Petals" transform="translate(6.46 6.508)">
+      <rect id="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(29.429)" fill="url(#linear-gradient)" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <rect id="Orange-2" data-name="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(63.349 3.189) rotate(45)" fill="url(#linear-gradient-2)" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <rect id="Orange-3" data-name="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(85.08 29.429) rotate(90)" fill="url(#linear-gradient-3)" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <rect id="Orange-4" data-name="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(81.891 63.349) rotate(135)" fill="url(#linear-gradient-4)" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <rect id="Orange-5" data-name="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(55.651 85.08) rotate(180)" fill="url(#linear-gradient-5)" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <rect id="Orange-6" data-name="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(21.731 81.891) rotate(-135)" fill="url(#linear-gradient-6)" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <rect id="Orange-7" data-name="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(0 55.651) rotate(-90)" fill="url(#linear-gradient-7)" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <rect id="Orange-8" data-name="Orange" width="26.223" height="40.004" rx="13.111" transform="translate(3.189 21.731) rotate(-45)" fill="url(#linear-gradient-8)" style="mix-blend-mode: multiply;isolation: isolate"/>
+    </g>
+  </g>
+</svg>
