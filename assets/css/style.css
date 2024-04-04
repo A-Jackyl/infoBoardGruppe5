@@ -54,7 +54,7 @@ p {
 
 .window_content {
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 14px;
     background-color: var(--green_pale);
     border: 2px solid var(--black);
     height: 100%;
@@ -67,7 +67,7 @@ p {
     top: 0;
     transform: translate(5px, 5px);
     border: 2px solid var(--black);
-    border-radius: 8px;
+    border-radius: 14px;
 }
 
 .window_top {
@@ -144,6 +144,7 @@ p {
     display: grid;
     width: 100%;
     height: 100%;
+    padding: 0 0 0 2rem;
     grid-template-areas: 
     "title title . . ."
     "clock class class meals meals"
@@ -193,6 +194,16 @@ p {
     background-color: var(--cyan);
 }
 
+.blink {
+    animation: blink-animation 2s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
 /* BUS SCHEDULE */
 
 #bus_schedule {
@@ -204,7 +215,7 @@ p {
     background-color: var(--orange_bus);
 }
 
-.bus_times {
+#bus_times {
     margin-block: 3rem;
 }
 
@@ -213,6 +224,10 @@ p {
     justify-content: space-between;
     margin: .5rem 1rem;
     align-items: center;
+}
+
+.bus_dest {
+    text-transform: uppercase;
 }
 
 .bus_number {
@@ -238,7 +253,7 @@ p {
     margin-right: 1rem;   
 }
 
-.schedule {
+#schedule {
     display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
@@ -295,22 +310,75 @@ p {
 
 #meals {
     grid-area: meals;
-    
+    width: 600px;
+    height: 400px;
 }
 
 #meals .window_top {
     background-color: var(--purple_dark);
 }
 
-.meal_list {
+.meal_tool_overlay {
+    background-color: var(--purple_pale);
+    display: grid;
+    grid-template-areas: 
+    "toolbar toolbar"
+    "sidebar meal_list";
+}
+
+.meal_toolbar {
+    grid-area: toolbar;
+    display: flex;
+    gap: 1rem;
+    padding: .4rem;
+}
+
+.meal_toolbar_items {
+    list-style-type: none;
+}
+
+.meal_toolbar_items::first-letter {
+    border-bottom: 2px solid var(--black);
+}
+
+.meal_sidebar {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 25px;
+    padding: .2rem;
+}
+
+.meal_sidebar_icon {
+    border: 2px solid white;
+    filter: drop-shadow(1px 1px 0px rgba(0,0,0,.4));
+    height: 25px;
+    aspect-ratio: 1/1;
+    margin: .1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink_pale);
+}
+
+.meal_sidebar_icon img {
+    height: 10px;   
+    object-fit: contain;
+}
+
+#meal_list {
+    grid-area: meal_list;
     padding: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background-color: var(--green_pale);
+    border-top: 2px solid var(--black);
+    border-left: 2px solid var(--black);
 }
 
 .meal_list_item {
     list-style-type: none;
-    padding: 0px 40px 40px 0px;
+    padding: 0px 20px 20px 0px;
 }
 
 .meal_day {
@@ -319,7 +387,7 @@ p {
 }
 
 .meal_name {
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 .meal_price {
@@ -396,7 +464,7 @@ p {
     position: absolute;
     filter: unset;
     top: -15px;
-    right: 100px;
+    left: 220px;
     height: 110px;
 }
 

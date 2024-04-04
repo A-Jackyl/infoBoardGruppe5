@@ -22,10 +22,11 @@
                     <div id="here" class="window_top">
                         <h2>KLOK OG DATA.exe</h2>
                     </div>
-                    <div id="clock_text">
+                    <div class="clock" id="clock_text">
                         <p>KLOKKEN ER</p>
-                        <p id="current_time">13:13</p>
-                        <p id="current_date">1/12/2023</p>
+                        <p id="current_time"><span class="hours"></span><span class="blink">:</span><span class="minutes"></span></p>
+                        <p ></p>
+                        <div id="current_date" class="date"></div>
                     </div>
                 </div>
                 <div id="wb1" class="window_back"></div>
@@ -36,12 +37,7 @@
                     <div id="here" class="window_top">
                         <h2>BUSTIDER.exe</h2>
                     </div>
-                    <ul class="bus_times">
-                        <li class="bus_time_item"><p class="bus_number">18</p><p class="bus_dest">Skovgårdvej</p><p class="bus_arrival">12:12</p></li>
-                        <li class="bus_time_item"><p class="bus_number">18</p><p class="bus_dest">Skovgårdvej</p><p class="bus_arrival">12:12</p></li>
-                        <li class="bus_time_item"><p class="bus_number">18</p><p class="bus_dest">Skovgårdvej</p><p class="bus_arrival">12:12</p></li>
-                        <li class="bus_time_item"><p class="bus_number">18</p><p class="bus_dest">Skovgårdvej</p><p class="bus_arrival">12:12</p></li>
-                        <li class="bus_time_item"><p class="bus_number">18</p><p class="bus_dest">Skovgårdvej</p><p class="bus_arrival">12:12</p></li>
+                    <ul id="bus_times">
                     </ul>
                 </div>
                 <div id="wb3" class="window_back"></div>
@@ -54,82 +50,7 @@
                             <h2>Bibliotek</h2><img style="transform: rotate(90deg); height: 10px;" src="assets/img/arrow.svg" alt="arrow.svg"><h2>Dokumenter</h2><img style="transform: rotate(90deg); height: 10px;" src="assets/img/arrow.svg" alt="arrow.svg"><h2>Skema</h2>
                         </div>
                     </div>
-                    <ul class="schedule">
-                        <li class="schedule_list_item">
-                            <div class="abbr_folder">
-                                <div class="abbr_folder_icon">
-                                    <img class="folder_icon" src="assets/img/folder.svg" alt="">
-                                    <p class="abbr_folder_name">WU</p>
-                                </div>
-                                    <p class="folder_icon_class_location">P025</p>
-                                </div>
-                                <div class="schedule_text">
-                                    <p class="full_course_name">WU10102</p>
-                                    <p class="subject_name">Adobe XD</p>
-                                    <div class="schedule_line"></div>
-                                    <p class="schedule_time">8:00</p>
-                                </div>
-                        </li>
-                        <li class="schedule_list_item">
-                            <div class="abbr_folder">
-                                <div class="abbr_folder_icon">
-                                    <img class="folder_icon" src="assets/img/folder.svg" alt="">
-                                    <p class="abbr_folder_name">WU</p>
-                                </div>
-                                    <p class="folder_icon_class_location">P025</p>
-                                </div>
-                                <div class="schedule_text">
-                                    <p class="full_course_name">WU10102</p>
-                                    <p class="subject_name">Adobe XD</p>
-                                    <div class="schedule_line"></div>
-                                    <p class="schedule_time">8:00</p>
-                                </div>
-                        </li>
-                        <li class="schedule_list_item">
-                            <div class="abbr_folder">
-                                <div class="abbr_folder_icon">
-                                    <img class="folder_icon" src="assets/img/folder.svg" alt="">
-                                    <p class="abbr_folder_name">WU</p>
-                                </div>
-                                    <p class="folder_icon_class_location">P025</p>
-                                </div>
-                                <div class="schedule_text">
-                                    <p class="full_course_name">WU10102</p>
-                                    <p class="subject_name">Adobe XD</p>
-                                    <div class="schedule_line"></div>
-                                    <p class="schedule_time">8:00</p>
-                                </div>
-                        </li>
-                        <li class="schedule_list_item">
-                            <div class="abbr_folder">
-                                <div class="abbr_folder_icon">
-                                    <img class="folder_icon" src="assets/img/folder.svg" alt="">
-                                    <p class="abbr_folder_name">WU</p>
-                                </div>
-                                    <p class="folder_icon_class_location">P025</p>
-                                </div>
-                                <div class="schedule_text">
-                                    <p class="full_course_name">WU10102</p>
-                                    <p class="subject_name">Adobe XD</p>
-                                    <div class="schedule_line"></div>
-                                    <p class="schedule_time">8:00</p>
-                                </div>
-                        </li>
-                        <li class="schedule_list_item">
-                            <div class="abbr_folder">
-                                <div class="abbr_folder_icon">
-                                    <img class="folder_icon" src="assets/img/folder.svg" alt="">
-                                    <p class="abbr_folder_name">WU</p>
-                                </div>
-                                    <p class="folder_icon_class_location">P025</p>
-                                </div>
-                                <div class="schedule_text">
-                                    <p class="full_course_name">WU10102</p>
-                                    <p class="subject_name">Adobe XD</p>
-                                    <div class="schedule_line"></div>
-                                    <p class="schedule_time">8:00</p>
-                                </div>
-                        </li>
+                    <ul id="schedule">
                     </ul>
                 </div>
                 <div id="wb5" class="window_back"></div>
@@ -137,36 +58,38 @@
             </div>
             <div id="meals" class="window table_card">
                 <div class="window_content">
-                    <div id="here" class="window_top">
-                        <h2>FROKOST.exe</h2>
+                    <div class="window_top">
+                        <h2>FROKOST</h2>
                     </div>
-                    <ul class="meal_list">
-                        <li class="meal_list_item">
-                            <h3 class="meal_day">Mandag</h3>
-                            <p class="meal_name">Boller i Karry</p>
-                            <p class="meal_price">35 kr</p>
-                        </li>
-                        <li class="meal_list_item" id="current_day">
-                            <h3 class="meal_day">Mandag</h3>
-                            <p class="meal_name">Boller i Karry</p>
-                            <p class="meal_price">35 kr</p>
-                        </li>
-                        <li class="meal_list_item">
-                            <h3 class="meal_day">Mandag</h3>
-                            <p class="meal_name">Boller i Karry</p>
-                            <p class="meal_price">35 kr</p>
-                        </li>
-                        <li class="meal_list_item">
-                            <h3 class="meal_day">Mandag</h3>
-                            <p class="meal_name">Boller i Karry</p>
-                            <p class="meal_price">35 kr</p>
-                        </li>
-                        <li class="meal_list_item">
-                            <h3 class="meal_day">Mandag</h3>
-                            <p class="meal_name">Boller i Karry</p>
-                            <p class="meal_price">35 kr</p>
-                        </li>
-                    </ul>
+                    <div class="meal_tool_overlay">
+                        <ul class="meal_toolbar">
+                            <li class="meal_toolbar_items">File</li>
+                            <li class="meal_toolbar_items">Edit</li>
+                            <li class="meal_toolbar_items">View</li>
+                            <li class="meal_toolbar_items">Image</li>
+                            <li class="meal_toolbar_items">Options</li>
+                            <li class="meal_toolbar_items">Help</li>
+                        </ul>
+                        <div class="meal_sidebar">
+                            <div class="meal_sidebar_icon"><img src="assets/img/polygonal_selection.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/rectangle_selection.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/eraser.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/paint_bucket.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/eyedropper.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/magnify.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/pencil.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/brush.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/spray.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/text.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/line_diagonal.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/line_curved.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/rectangle.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/polygonal_shape.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/ellipse.svg" alt=""></div>
+                            <div class="meal_sidebar_icon"><img src="assets/img/rectangle_curved.svg" alt=""></div>
+                        </div>
+                        <ul id="meal_list"></ul>
+                    </div>
                 </div>
                 <div id="wb7" class="window_back"></div>
                 <div id="wb8" class="window_back"></div>
@@ -224,15 +147,18 @@
                     <img src="assets/img/display.svg" alt="display">
                     <img src="assets/img/Speaker.svg" alt="Speaker">
                 </div>
-                <div id="taskbar_time">
-                    <p>13:13</p>
-                    <p>1/12/2024</p>
+                <div class="clock" id="taskbar_time">
+                    <p><span class="hours"></span><span class="blink">:</span><span class="minutes"></span></p>
+                    <div class="date"></div>
                 </div>
             </div>
         </section>
     </main>
     <script src="assets/js/windowFormatting.js"></script>
     <script src="assets/js/weather.js"></script>
+    <script src="assets/js/meal.js"></script>
+    <script src="assets/js/bus.js"></script>
+    <script src="assets/js/activites.js"></script>
+    <script src="assets/js/clock.js"></script>
 </body>
 </html>
->>>>>>> ae90805a8ab2d870158a0337ac66ae57db82e21e
