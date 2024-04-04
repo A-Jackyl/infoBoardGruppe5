@@ -46,6 +46,8 @@ p {
     filter: drop-shadow(1px 1px 0px rgba(0,0,0,.1));
 }
 
+/* REUSEABLE */
+
 .window {
     position: relative;
 }
@@ -67,6 +69,28 @@ p {
     border: 2px solid var(--black);
     border-radius: 8px;
 }
+
+.window_top {
+    background-color: var(--pink);
+    border-bottom: 2px solid var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding-inline: .5rem;
+}
+
+.window_top img {
+    height: 20px;
+    margin: 0px;
+}
+
+.window_buttons {
+    align-self: center;
+    margin-right: 5px;
+}
+
+/* WINDOW BACKGROUNDS */
 
 #wb1 {
     background-color: #88C0E4;
@@ -116,26 +140,6 @@ p {
     z-index: -11;
 }
 
-.window_top {
-    background-color: var(--pink);
-    border-bottom: 2px solid var(--black);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 30px;
-    padding-inline: .5rem;
-}
-
-.window_top img {
-    height: 20px;
-    margin: 0px;
-}
-
-.window_buttons {
-    align-self: center;
-    margin-right: 5px;
-}
-
 .table {
     display: grid;
     width: 100%;
@@ -151,6 +155,8 @@ p {
     margin: 12px;
 }
 
+/* TITLE */
+
 #title {
     grid-area: title;
 }
@@ -161,6 +167,8 @@ p {
     margin: 10px auto;
     display: block;
 }
+
+/* CLOCK */
 
 #clock {
     grid-area: clock;
@@ -184,6 +192,8 @@ p {
 #clock .window_top {
     background-color: var(--cyan);
 }
+
+/* BUS SCHEDULE */
 
 #bus_schedule {
     grid-area: bus;
@@ -212,6 +222,8 @@ p {
     border: 2px solid var(--black);
 }
 
+/* CLASS ACTIVITIES */
+
 #class_schedule {
     grid-area: class;
     
@@ -226,6 +238,61 @@ p {
     margin-right: 1rem;   
 }
 
+.schedule {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+
+.schedule_list_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+.abbr_folder {
+    padding-top: 12px;
+    padding-right: 12px;
+}
+
+.abbr_folder_icon {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.folder_icon {
+    height: 40px;
+    position: absolute;
+}
+
+.abbr_folder_name {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+}
+
+.schedule_text {
+    display: flex;
+    border-bottom: 2px solid var(--black);
+    padding: .5rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.schedule_line {
+    border-right: 2px solid var(--black);
+    height: 30px;
+}
+
+/* MEALS */
+
 #meals {
     grid-area: meals;
     
@@ -234,6 +301,51 @@ p {
 #meals .window_top {
     background-color: var(--purple_dark);
 }
+
+.meal_list {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.meal_list_item {
+    list-style-type: none;
+    padding: 0px 40px 40px 0px;
+}
+
+.meal_day {
+    padding-left: 1rem;
+    font-weight: 800;
+}
+
+.meal_name {
+    font-size: 2rem;
+}
+
+.meal_price {
+    text-align: right;
+    font-size: 1.8rem;
+}
+
+#current_day {
+    animation-name: current_day;
+    animation-iteration-count: infinite;
+    animation-duration: 1.6s;
+}
+
+@keyframes current_day {
+    0% {
+        color: var(--black);
+    }
+    50% {
+        color: var(--pink);
+    }
+    100% {
+        color: var(--black);
+    }
+}
+
+/* NOTES */
 
 .note {
     font-family: 'handwritten';
@@ -268,7 +380,7 @@ p {
 }
 
 .note_content_wds p:first-of-type {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .note_flip {
@@ -284,14 +396,30 @@ p {
     position: absolute;
     filter: unset;
     top: -15px;
-    right: 40px;
+    right: 100px;
     height: 110px;
 }
+
+/* WEATHER */
 
 #weather {
     grid-area: weather;
     
 }
+
+.weather_temp {
+    font-size: 4rem;
+}
+
+.weather_cond {
+    font-size: 3rem;
+}
+
+.weather_cond_icon {
+    height: 50px;
+}
+
+/* WIFI */
 
 #wifi {
     grid-area: wifi;
@@ -303,6 +431,8 @@ p {
     left: 0;
     width: 100px;
 }
+
+/* TASKBAR (FOOTER) */
 
 .taskbar {
     background-color: var(--blue_dark);
