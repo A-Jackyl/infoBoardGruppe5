@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="98" viewBox="0 0 98 98">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#67ff81"/>
+      <stop offset="1" stop-color="#01b41f"/>
+    </linearGradient>
+  </defs>
+  <g id="Messages" opacity="0.621">
+    <rect id="Origin_Color" data-name="Origin Color" width="98" height="98" rx="13" fill="url(#linear-gradient)"/>
+    <path id="Messages_Icon" data-name="Messages Icon" d="M17.15,56.35V55.225C6.861,49.981,0,40.56,0,29.808,0,13.346,16.088,0,35.933,0S71.867,13.346,71.867,29.808,55.779,59.617,35.933,59.617a43.315,43.315,0,0,1-7.013-.567,11.5,11.5,0,0,0-5.233.625c-2.454.759-6.246,4.026-11.437,4.026C11.959,63.7,17.15,59.515,17.15,56.35Z" transform="translate(13.067 17.967)" fill="#fff"/>
+  </g>
+</svg>

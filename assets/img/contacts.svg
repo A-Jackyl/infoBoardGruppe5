@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="98" viewBox="0 0 98 98">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Origin_Color" data-name="Origin Color" width="98" height="98" rx="9" fill="#fff"/>
+    </clipPath>
+    <filter id="Rectangle_Copy_2" x="25.75" y="3.904" width="132.25" height="144.5" filterUnits="userSpaceOnUse">
+      <feOffset dy="15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feFlood flood-opacity="0.251"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_Copy" x="25.75" y="-20.596" width="132.25" height="144.5" filterUnits="userSpaceOnUse">
+      <feOffset dy="15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur-2"/>
+      <feFlood flood-opacity="0.251"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle" x="25.75" y="-45" width="132.25" height="144.5" filterUnits="userSpaceOnUse">
+      <feOffset dy="15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur-3"/>
+      <feFlood flood-opacity="0.251"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle-2" x="-45" y="-60" width="205.75" height="218" filterUnits="userSpaceOnUse">
+      <feOffset dx="15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur-4"/>
+      <feFlood flood-opacity="0.251"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Contacts" opacity="0.683">
+    <g id="Group_1" data-name="Group 1">
+      <rect id="Origin_Color-2" data-name="Origin Color" width="98" height="98" rx="9" fill="#fff"/>
+      <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path)">
+        <g id="Group">
+          <rect id="Rectangle_Copy_3" data-name="Rectangle Copy 3" width="12.25" height="24.5" transform="translate(85.75 73.404)" fill="#4cd964"/>
+          <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_Copy_2)">
+            <rect id="Rectangle_Copy_2-2" data-name="Rectangle Copy 2" width="12.25" height="24.5" transform="translate(85.75 48.9)" fill="#ff9500"/>
+          </g>
+          <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_Copy)">
+            <rect id="Rectangle_Copy-2" data-name="Rectangle Copy" width="12.25" height="24.5" transform="translate(85.75 24.4)" fill="#5ac8fa"/>
+          </g>
+          <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle)">
+            <rect id="Rectangle-3" data-name="Rectangle" width="12.25" height="24.5" transform="translate(85.75)" fill="#d0cdc7"/>
+          </g>
+          <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle-2)">
+            <rect id="Rectangle-4" data-name="Rectangle" width="85.75" height="98" rx="8" fill="#dfddd6"/>
+          </g>
+          <path id="Combined_Shape" data-name="Combined Shape" d="M31.008,62.016H30.86a30.914,30.914,0,0,1-22.226-9.54h0a31.047,31.047,0,0,1-6.2-9.4A30.847,30.847,0,0,1,.63,37.257a31.31,31.31,0,0,1,0-12.5A30.841,30.841,0,0,1,5.3,13.671,31.1,31.1,0,0,1,18.938,2.437,30.846,30.846,0,0,1,24.759.63a31.31,31.31,0,0,1,12.5,0A30.84,30.84,0,0,1,48.345,5.3,31.1,31.1,0,0,1,59.579,18.938a30.848,30.848,0,0,1,1.807,5.82,31.31,31.31,0,0,1,0,12.5A30.84,30.84,0,0,1,56.72,48.345a31.233,31.233,0,0,1-3.338,4.131h0a30.915,30.915,0,0,1-22.226,9.54h-.148ZM25.3,3.255A28.174,28.174,0,0,0,15.169,7.518,28.41,28.41,0,0,0,4.906,19.981,28.185,28.185,0,0,0,3.255,25.3a28.6,28.6,0,0,0,0,11.418A28.174,28.174,0,0,0,7.518,46.846,28.518,28.518,0,0,0,9.8,49.784c3.169-4.981,11.471-8.536,21.212-8.536S49.051,44.8,52.22,49.784a28.342,28.342,0,0,0,4.89-7.749,28.185,28.185,0,0,0,1.651-5.317,28.6,28.6,0,0,0,0-11.418A28.175,28.175,0,0,0,54.5,15.169,28.41,28.41,0,0,0,42.034,4.906a28.185,28.185,0,0,0-5.317-1.651,28.6,28.6,0,0,0-11.418,0ZM20.672,24.691c0-6.343,4.628-11.484,10.336-11.484s10.336,5.142,10.336,11.484S36.716,36.176,31.008,36.176,20.672,31.034,20.672,24.691Z" transform="translate(11.867 17.896)" fill="#b8b1ab"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
