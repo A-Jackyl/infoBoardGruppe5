@@ -1,0 +1,105 @@
+
+/* CSS STYLING FOR BUS SCHEDULE LOADING SCREEN */
+
+.bus_window_container{
+    position: relative;
+}
+
+#busLoading {
+    position: absolute;
+    top: 0; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#busLoading p {
+    font-size: 20px;
+    color: #333;
+}
+
+/* CSS STYLING FOR CLOCK LOADING SCREEN */
+
+.clock_window_container{
+    position: relative;
+}
+
+#clockLoading{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clockLoading p{
+    font-size: 20px;
+    color: #333;
+}
+
+/* CSS STYLING FOR SCHEDULE LOADING SCREEN */
+
+.schedule_window_container{
+    position: relative;
+}
+
+#scheduleLoading{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scheduleLoading p{
+    font-size: 20px;
+    color: #333;
+}
+
+/* CSS STYLING FOR MEALS LOADING SCREEN */
+
+.meals_window_container{
+    position: relative;
+}
+
+#mealsLoading{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mealsLoading p{
+    font-size: 20px;
+    color: #333;
+}
+
+/* CSS STYLING FOR WEATHER LOADING SCREEN */
+
+.weather_window_container{
+    position: relative;
+}
+
+#weatherLoading{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#weatherLoading p{
+    font-size: 20px;
+    color: #333;
+}
