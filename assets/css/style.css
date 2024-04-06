@@ -12,7 +12,10 @@
     --green_pale: #FDFBE6;
     --pink_pale:#FBCEEF;
     --pink: #FC6985;
+    --pink_pale_2: #FD95A9;
     --purple: #D0A0FF;
+    --purple_2: #F1AEFC;
+    --purple_3: #F0CFF5;
     --purple_dark: #F0BBF9;
     --orange: #FECC7F;
     --orange_dark: #FDB64C;
@@ -257,6 +260,67 @@ p {
     display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
+    grid-area: main;
+}
+
+.schedule_container {
+    display: grid;
+    width: 100%;
+    grid-template-areas: "top scroll" "main scroll";
+    grid-template-columns: 1fr;
+}
+
+.schedule_container .scrollbar_vert {
+    grid-area: scroll;
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid var(--black);
+    margin: unset;
+
+}
+
+.schedule_container .scrollbar_vert .scrollbar_left, 
+.schedule_container .scrollbar_vert .scrollbar_grab, 
+.schedule_container .scrollbar_vert .scrollbar_right {
+    background-color: var(--pink_pale_2);
+}
+
+.schedule_top {
+    grid-area: top;
+    background-color: var(--pink_pale_2 );
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    height: 34px;
+    padding-left: 2rem;
+    align-items: center;
+    position: relative;
+}
+
+.schedule_top li {
+    list-style-type: none;
+}
+
+#schedule_arrow {
+    transform: rotate(180deg);
+    height: 10px;
+}
+
+#questionmark {
+    background-color: var(--pink);
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--black);
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
 }
 
 .schedule_list_item {
@@ -342,11 +406,15 @@ p {
 }
 
 .meal_sidebar {
+    height: 100%;
+}
+
+.meal_sidebar_container {
     grid-area: sidebar;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 25px;
     padding: .2rem;
+    gap: .1rem;
 }
 
 .meal_sidebar_icon {
@@ -354,7 +422,6 @@ p {
     filter: drop-shadow(1px 1px 0px rgba(0,0,0,.4));
     height: 25px;
     aspect-ratio: 1/1;
-    margin: .1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -366,14 +433,23 @@ p {
     object-fit: contain;
 }
 
-#meal_list {
+#meal_list_main {
     grid-area: meal_list;
-    padding: 1rem;
+    height: 100%;
+    background-color: var(--purple_dark);
+    grid-template-areas: "main scroll_right" "scroll_bottom .";
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: var(--green_pale);
     border-top: 2px solid var(--black);
     border-left: 2px solid var(--black);
+}
+
+#meal_list {
+    grid-area: main;
+    padding: 1rem;
+    margin: .2rem .4rem .4rem .2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
 }
 
 .meal_list_item {
@@ -390,9 +466,89 @@ p {
     font-size: 1.3rem;
 }
 
-.meal_price {
-    text-align: right;
-    font-size: 1.8rem;
+.scrollbar_horiz {
+    grid-area: scroll_bottom;
+    width: 100%;
+    height: 18px;
+    background-color: var(--purple_2);
+    display: flex;
+    position: relative;
+    border: 2px solid var(--black);
+    margin: .3rem;
+}
+
+.scrollbar_vert {
+    grid-area: scroll_right;
+    width: 18px;
+    height: 100%;
+    background-color: var(--purple_2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid var(--black);
+    margin: .3rem;
+}
+
+.scrollbar_left {
+    position: absolute;
+    background-color: var(--purple_3);
+    transform: rotate(-90deg);
+    height: 14px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 1px solid var(--black);
+}
+
+.scrollbar_vert .scrollbar_left {
+    position: absolute;
+    background-color: var(--purple_3);
+    transform: rotate(0deg);
+    height: 13px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 1px solid var(--black);
+}
+
+.scrollbar_right {
+    position: absolute;
+    right: 0;
+    background-color: var(--purple_3);
+    transform: rotate(90deg);
+    height: 14px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 2px solid var(--black);
+}
+
+.scrollbar_vert .scrollbar_right {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--purple_3);
+    transform: rotate(180deg);
+    height: 15px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 2px solid var(--black);
+}
+
+.scrollbar_grab {
+    background-color: var(--purple_3);
+    height: 100%;
+    width: 60px;
+    border-left: 2px solid var(--black);
+    border-right: 2px solid var(--black);
+    margin-left: 50px;
+}
+
+.scrollbar_vert .scrollbar_grab {
+    height: 60px;
+    width: 100%;
+    border-left: unset;
+    border-right: unset;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    margin-left: 0px;
+    margin-top: 30px;
 }
 
 #current_day {
