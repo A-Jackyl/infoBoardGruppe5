@@ -15,10 +15,23 @@ async function fetchDepartureBoard() {
                 departureElement.classList.add('bus_time_item');
                 const line = departure.line || departure.sname;
                 const direction = departure.direction;
-                const time = departure.rtTime || departure.time;
+                
+                // Extract hour and minute components from the departure time
+                const [hour, minute] = departure.time.split(':');
+                
+                // Construct a new Date object with the current date and departure time
+                const currentTime = new Date();
+                const departureTime = new Date();
+                departureTime.setHours(parseInt(hour, 10));
+                departureTime.setMinutes(parseInt(minute, 10));
+
+                // Calculate time difference in minutes
+                const timeDifference = Math.max(Math.ceil((departureTime - currentTime) / 1000 / 60), 0); // in minutes
 
                 departureElement.innerHTML = `
-                <p class="bus_number">${line}</p><p class="bus_dest">${direction}</p><p class="bus_arrival">${time}</p>`;
+                    <p class="bus_number">${line}</p>
+                    <p class="bus_dest">${direction}</p>
+                    <p class="bus_arrival">${timeDifference} min</p>`;
                 departureBoardElement.appendChild(departureElement);
 
                 counter++;
@@ -31,4 +44,4 @@ async function fetchDepartureBoard() {
     }
 }
 
-window.onload = fetchDepartureBoard;
+setInterval(fetchDepartureBoard, 1000)

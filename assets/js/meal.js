@@ -5,7 +5,6 @@ fetch('https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?typ
 
     const currentDay = new Date().getDay()
 
-    console.log(currentDay);
     if (data && data.Days) {
         data.Days.forEach(item => {
             const menuItemElement = document.createElement('li');
