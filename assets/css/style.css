@@ -1039,7 +1039,7 @@ p {
         transform: translate(0px, 0px);
     }
     50% {
-        transform: translate(0px, 5px);
+        transform: translate(0px, 30px);
     }
     100% {
         transform: translate(0px, 0px);

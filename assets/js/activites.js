@@ -38,7 +38,6 @@ fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
           if (data && data.value) {
             let counter = 0;
 
-        
             passedDates.forEach(item => {
                 if (counter >= 5) return;
         
@@ -50,6 +49,9 @@ fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
                 }
                 const shortTime = convertToTimeString(item.StartDate);
 
+
+                let imagePath
+                let abbrFolderName
                 switch (item.Education) {
                     case 'Webudvikler':
                         imagePath = 'assets/img/folder_green.svg';
@@ -67,8 +69,9 @@ fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
                         imagePath = 'assets/img/folder_blue.svg';
                         abbrFolderName = 'GT';
                         break;
-                    default:
+                        default:
                         imagePath = 'assets/img/folder.svg';
+                        abbrFolderName = '';
                         break;
                 }
 
