@@ -32,13 +32,15 @@
 
 @font-face {
     font-family: 'handwritten';
-    src: url(../fonts/Caveat-VariableFont_wght.ttf);
+    /* src: url(../fonts/Caveat-VariableFont_wght.ttf); */
+    src: url(../fonts/ArchitectsDaughter-Regular.ttf)
 }
 
 body {
     background-image: url(../img/background.svg);
     color: var(--black);
     font-family: 'digitalFont', sans-serif;
+    overflow: hidden;
 }
 
 h2 {
@@ -141,20 +143,22 @@ p {
     background-color: #BF96D5;
     transform: translate(5px, 5px);
     z-index: -10;
+    border-radius: 14px 14px 0px;
+
 }
 
 #wb8 {
     background-color: #B968C7;
     transform: translate(10px, 10px);
     z-index: -11;
+    border-radius: 14px 14px 0px;
+
 }
 
 .table {
     display: grid;
-    width: 1680px;
+    width: 100%;
     height: 100%;
-    margin: auto;
-    justify-self: center;
     justify-content: center;
     grid-template-areas: 
     "title title . . ."
@@ -171,7 +175,7 @@ p {
 
 #title {
     grid-area: title;
-    width: 580px;
+    width: 25vw;
 }
 
 #logo {
@@ -185,21 +189,23 @@ p {
 
 #clock {
     grid-area: clock;
-    width: 300px;
+    height: 25rem;
 }
 
 #clock_text {
     text-align: center;
-    font-size: 2rem;
-    margin-block: 2rem;
+    font-size: 3rem;
+    margin-block: 4rem;
 }
 
 #current_time {
-    font-size: 4rem;
+    font-size: 6rem;
+    margin-block: 1rem;
 }
 
 #current_date {
-    font-size: 2.2rem;
+    font-size: 3.1rem;
+    margin-block: 1.5rem;
 }
 
 #clock .window_top {
@@ -220,8 +226,9 @@ p {
 
 #bus_schedule {
     grid-area: bus;
-    height: 400px;
-    width: 300px;
+    height: 40rem;
+    width: 15vw;
+    font-size: 1.4rem;
 }
 
 #bus_schedule .window_top {
@@ -235,7 +242,7 @@ p {
 .bus_time_item {
     display: flex;
     justify-content: space-between;
-    margin: .5rem 1rem;
+    margin: 1rem 1rem;
     align-items: center;
 }
 
@@ -254,8 +261,7 @@ p {
 
 #class_schedule {
     grid-area: class;
-    height: 584px;
-    width: 600px;
+    width: 40vw;
 }
 
 #class_schedule .window_content {
@@ -289,7 +295,7 @@ p {
     width: 100%;
     grid-template-areas: "top scroll" "main scroll";
     grid-template-columns: 1fr;
-    height: 500px;
+    height: 96.8%;
 }
 
 .schedule_container .scrollbar_vert {
@@ -359,7 +365,8 @@ p {
     align-items: center;
     width: 100%;
     text-align: center;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.7rem;
+    font-size: 1.8rem;
 }
 
 .abbr_folder {
@@ -376,18 +383,31 @@ p {
 }
 
 .folder_icon {
-    height: 40px;
+    height: 50px;
     position: absolute;
+    left: -10px;
+    top: -10px;
 }
 
 .abbr_folder_name {
     position: absolute;
     top: 16px;
     left: 15px;
+    font-size: 1.2rem;
+}
+
+.folder_icon_class_location {
+    white-space: nowrap ;
+    margin-top: .3rem;
+    text-align: center;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 26px;
 }
 
 .schedule_text {
-    display: flex;
+    display: grid;
+    grid-template-columns:40% 30% 10% 20%;
     border-bottom: 2px solid var(--black);
     padding: .5rem;
     align-items: center;
@@ -404,12 +424,15 @@ p {
 
 #meals {
     grid-area: meals;
-    width: 650px;
-    /* height: 400px; */
+    width: 32vw;
 }
 
 #meals .window_top {
     background-color: var(--purple_dark);
+}
+
+#meals .window_content {
+    border-radius: 14px 14px 0px;
 }
 
 .meal_tool_overlay {
@@ -418,6 +441,8 @@ p {
     grid-template-areas: 
     "toolbar toolbar"
     "sidebar meal_list";
+    grid-template-rows: 30px 1fr;
+    height: 100%;
 }
 
 .meal_toolbar {
@@ -425,6 +450,7 @@ p {
     display: flex;
     gap: 1rem;
     padding: .4rem;
+    height: 30px;
 }
 
 .meal_toolbar_items {
@@ -433,10 +459,6 @@ p {
 
 .meal_toolbar_items::first-letter {
     border-bottom: 2px solid var(--black);
-}
-
-.meal_sidebar {
-    height: 100%;
 }
 
 .meal_sidebar_container {
@@ -450,36 +472,44 @@ p {
 .meal_sidebar_icon {
     border: 2px solid white;
     filter: drop-shadow(1px 1px 0px rgba(0,0,0,.4));
-    height: 25px;
+    height: 30px;
     aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--pink_pale);
+    overflow: hidden;
 }
 
 .meal_sidebar_icon img {
-    height: 10px;   
+    height: 16px;   
     object-fit: contain;
+}
+
+.meal_sidebar_icon.tiny img {
+    height: 32px;
 }
 
 #meal_list_main {
     grid-area: meal_list;
     background-color: var(--purple_dark);
     grid-template-areas: "main scroll_right" "scroll_bottom .";
+    grid-template-rows: 1fr 18px;
     display: grid;
     border-top: 2px solid var(--black);
     border-left: 2px solid var(--black);
+    height: 97%;
+    padding-bottom: 1rem;
 }
 
 #meal_list {
     grid-area: main;
     padding: .4rem .3rem;
-    margin: .2rem .4rem .4rem .2rem;
+    margin: .4rem .4rem .4rem .5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    filter: drop-shadow(-3px 3px 0px rgba(0,0,0,.3));
     background-color: #fff;
-    height: 100%;
 }
 
 .meal_list_item {
@@ -490,11 +520,11 @@ p {
 .meal_day {
     padding-left: 1rem;
     font-weight: 800;
-    font-size: .8rem;
+    font-size: 1.6rem;
 }
 
 .meal_name {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
 .scrollbar_horiz {
@@ -604,7 +634,9 @@ p {
 
 .notes_container {
     grid-area: notes;
-    display: flex;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 1rem;
 }
 
 .note {
@@ -627,11 +659,12 @@ p {
 
 .note_content {
     filter: drop-shadow(5px 5px 0px rgba(0,0,0,.2));
+    height: 100%;
 }
 
 .note_content_wds {
-    height: 260px;
-    width: 260px;
+    height: 100%;
+    width: 90%;
     background-color: var(--orange);
     clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 100%, 0% 90%, 0% 0%);
     text-align: center;
@@ -639,13 +672,11 @@ p {
 }
 
 #wifi .note_content_wds {
-    height: 220px;
-    width: 340px;
-    aspect-ratio: unset;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 32% 100%, 0% 90%, 0% 0%);
 }
 
 .note_content_wds p:first-of-type {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .note_flip {
@@ -672,8 +703,7 @@ p {
 /* WEATHER */
 
 #weather {
-    grid-area: weather;
-    width: 280px;
+    /* grid-area: weather; */
 }
 
 .weather_temp {
@@ -691,7 +721,7 @@ p {
 /* WIFI */
 
 #wifi {
-    grid-area: wifi;
+    /* grid-area: wifi; */
 }
 
 #cat {
@@ -818,8 +848,8 @@ p {
 
 .dec_overlay #o1 {
     position: absolute;
-    left: 580px;
-    top: 70px;
+    left: 29%;
+    top: 5%;
     height: 70px;
     animation-name: hover;
     animation-duration: 4s;
@@ -830,8 +860,8 @@ p {
 
 .dec_overlay #o2 {
     position: absolute;
-    left: 20px;
-    top: 300px;
+    left: 5%;
+    top: 35%;
     height: 70px;
     transform: rotate(168deg);
     animation-name: hover;
@@ -843,10 +873,10 @@ p {
 
 .dec_overlay #o3 {
     position: absolute;
-    left: 430px;
-    top: 830px;
-    height: 70px;
-    transform: rotate(107deg);
+    left: 20%;
+    top: 92%;
+    height: 100px;
+    transform: rotate(106deg);
     animation-name: hover;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -856,8 +886,8 @@ p {
 
 .dec_overlay #o4 {
     position: absolute;
-    left: 1220px;
-    top: 780px;
+    left: 72%;
+    top: 85%;
     height: 70px;
     transform: rotate(-20deg);
     animation-name: hover;
@@ -870,8 +900,8 @@ p {
 .dec_underlay #o5 {
     z-index: inherit;
     position: absolute;
-    left: 20px;
-    top: 370px;
+    left: 3%;
+    top: 38%;
     height: 80px;
     animation-name: hover;
     animation-duration: 4s;
@@ -883,8 +913,8 @@ p {
 .dec_underlay #o6 {
     z-index: inherit;
     position: absolute;
-    left: 280px;
-    top: 150px;
+    left: 20%;
+    top: 10%;
     height: 80px;
     animation-name: hover;
     animation-duration: 4s;
@@ -896,8 +926,8 @@ p {
 .dec_underlay #o7 {
     z-index: inherit;
     position: absolute;
-    left: 940px;
-    top: 400px;
+    left: 60%;
+    top: 25%;
     height: 120px;
     animation-name: hover;
     animation-duration: 4s;
@@ -909,8 +939,8 @@ p {
 .dec_underlay #o8 {
     z-index: inherit;
     position: absolute;
-    left: 1600px;
-    top: 80px;
+    left: 93%;
+    top: 6%;
     height: 100px;
     animation-name: hover;
     animation-duration: 4s;
@@ -922,8 +952,8 @@ p {
 .dec_underlay #o9 {
     z-index: inherit;
     position: absolute;
-    left: 1100px;
-    top: 30px;
+    left: 70%;
+    top: 3%;
     height: 80px;
     animation-name: hover;
     animation-duration: 4s;
@@ -935,9 +965,9 @@ p {
 .dec_underlay #o10 {
     z-index: inherit;
     position: absolute;
-    left: 30px;
-    top: 120px;
-    height: 20px;
+    left: 4%;
+    top: 7%;
+    height: 30px;
     animation-name: hover;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -948,22 +978,22 @@ p {
 .dec_underlay #o11 {
     z-index: inherit;
     position: absolute;
-    left: 400px;
-    top: 115px;
-    height: 20px;
+    left: 23%;
+    top: 8%;
+    height: 30px;
     animation-name: hover;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    animation-delay: 1s;
+    animation-delay: 3s;
     animation-timing-function: linear;
 }
 
 .dec_underlay #o12 {
     z-index: inherit;
     position: absolute;
-    left: 670px;
-    top: 30px;
-    height: 20px;
+    left: 32%;
+    top: 2%;
+    height: 40px;
     animation-name: hover;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -974,9 +1004,9 @@ p {
 .dec_underlay #o13 {
     z-index: inherit;
     position: absolute;
-    left: 1500px;
-    top: 70px;
-    height: 20px;
+    left: 65%;
+    top: 5%;
+    height: 70px;
     animation-name: hover;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -987,9 +1017,9 @@ p {
 .dec_underlay #o14 {
     z-index: inherit;
     position: absolute;
-    left: 350px;
-    top: 370px;
-    height: 20px;
+    left: 90%;
+    top: 1%;
+    height: 100px;
     animation-name: hover;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -1000,9 +1030,9 @@ p {
 .dec_underlay #o15 {
     z-index: inherit;
     position: absolute;
-    left: 20px;
-    top: 680px;
-    height: 20px;
+    left: 3%;
+    top: 70%;
+    height: 40px;
     animation-name: hover;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -1012,8 +1042,8 @@ p {
 .dec_underlay #o16 {
     z-index: inherit;
     position: absolute;
-    left: 1550px;
-    top: 30px;
+    left: 20%;
+    top: 37%;
     height: 50px;
     animation-name: hover;
     animation-duration: 4s;
@@ -1021,6 +1051,7 @@ p {
     animation-delay: 2s;
     animation-timing-function: linear;
 }
+
 .dec_underlay #o17 {
     z-index: inherit;
     position: absolute;
@@ -1031,6 +1062,144 @@ p {
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o18 {
+    z-index: inherit;
+    position: absolute;
+    left: 2%;
+    bottom: -.85%;
+    height: 280px;
+}
+
+.dec_overlay #o19 {
+    z-index: inherit;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    height: 150px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o20 {
+    z-index: inherit;
+    position: absolute;
+    left: 60%;
+    top: 2%;
+    height: 100px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o21 {
+    z-index: inherit;
+    position: absolute;
+    left: 80%;
+    top: 5%;
+    height: 90px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o22 {
+    z-index: inherit;
+    position: absolute;
+    left: 14%;
+    top: 36%;
+    height: 90px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o23 {
+    z-index: inherit;
+    position: absolute;
+    left: 93%;
+    top: 80%;
+    height: 90px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o24 {
+    z-index: inherit;
+    position: absolute;
+    left: 68%;
+    top: 2%;
+    height: 40px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o25 {
+    z-index: inherit;
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o26 {
+    z-index: inherit;
+    position: absolute;
+    left: 3%;
+    top: 40%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o27 {
+    z-index: inherit;
+    position: absolute;
+    left: 1%;
+    top: 90%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o28 {
+    z-index: inherit;
+    position: absolute;
+    left: 20%;
+    top: 6%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
     animation-timing-function: linear;
 }
 
