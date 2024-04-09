@@ -10,7 +10,7 @@ async function fetchDepartureBoard() {
         let counter = 0;
 
         data.MultiDepartureBoard.Departure.forEach(departure => {
-            if (counter < 8) { // Limit to 6 departures
+            if (counter < 6) { // Limit to 6 departures
                 const departureElement = document.createElement('li');
                 departureElement.classList.add('bus_time_item');
                 const line = departure.line || departure.sname;
