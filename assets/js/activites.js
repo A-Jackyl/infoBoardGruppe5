@@ -39,6 +39,7 @@ async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/sche
           if (data && data.value) {
             let counter = 0;
 
+            container.innerHTML = `<h2>SKEMA.exe</h2>`
             passedDates.forEach(item => {
                 if (counter >= 9) return;
         
