@@ -17,6 +17,7 @@ fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
                     return classDate > currentDate;
                 });
 
+                setInterval(removePassedItems, 60000)
                 /* console.log('Filtered data after removing passed items:', passedDates); */
             }
 
