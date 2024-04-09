@@ -640,13 +640,17 @@ p {
     }
 }
 
+.past_day {
+    filter: opacity(.3);
+}
+
 /* NOTES */
 
 .notes_container {
     grid-area: notes;
     display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 1rem;
+    grid-template-columns: 50% 50%;
+    gap: 0rem;
 }
 
 .note {
@@ -678,11 +682,12 @@ p {
     background-color: var(--orange);
     clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 100%, 0% 90%, 0% 0%);
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 #wifi .note_content_wds {
     clip-path: polygon(0% 0%, 100% 0, 100% 100%, 32% 100%, 0% 90%, 0% 0%);
+    font-size: 1.3rem;
 }
 
 .note_content_wds p:first-of-type {
@@ -702,12 +707,8 @@ p {
     position: absolute;
     filter: unset;
     top: -10px;
-    left: 200px;
-    height: 110px;
-}
-
-#wifi .note_pin {
-    left: 270px;
+    left: 190px;
+    height: 80px;
 }
 
 /* WEATHER */
@@ -859,8 +860,8 @@ p {
 
 .dec_overlay #o1 {
     position: absolute;
-    left: 29%;
-    top: 5%;
+    left: 30%;
+    top: 7%;
     height: 70px;
     animation-name: hover_enlarge;
     animation-duration: 8s;
@@ -872,10 +873,10 @@ p {
 .dec_overlay #o2 {
     position: absolute;
     left: 5%;
-    top: 35%;
+    top: 43%;
     height: 70px;
     transform: rotate(168deg);
-    animation-name: hover:;
+    animation-name: hover;
     animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-delay: 1s;
@@ -885,8 +886,8 @@ p {
 .dec_overlay #o3 {
     position: absolute;
     left: 20%;
-    top: 92%;
-    height: 100px;
+    top: 89%;
+    height: 90px;
     transform: rotate(106deg);
     animation-name: hover;
     animation-duration: 8s;
@@ -897,8 +898,8 @@ p {
 
 .dec_overlay #o4 {
     position: absolute;
-    left: 72%;
-    top: 85%;
+    left: 78%;
+    top: 93%;
     height: 70px;
     transform: rotate(-20deg);
     animation-name: hover_enlarge;
@@ -951,9 +952,9 @@ p {
     z-index: inherit;
     position: absolute;
     left: 93%;
-    top: 6%;
+    top: 8%;
     height: 100px;
-    animation-name: hover;
+    animation-name: hover_enlarge;
     animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-delay: 3s;
@@ -1088,7 +1089,7 @@ p {
 .dec_overlay #o19 {
     z-index: inherit;
     position: absolute;
-    left: 50%;
+    left: 40%;
     top: 0%;
     height: 150px;
     animation-name: hover_enlarge;
@@ -1101,8 +1102,8 @@ p {
 .dec_overlay #o20 {
     z-index: inherit;
     position: absolute;
-    left: 60%;
-    top: 2%;
+    left: 55%;
+    top: 4%;
     height: 100px;
     animation-name: hover;
     animation-duration: 8s;
@@ -1128,7 +1129,7 @@ p {
     z-index: inherit;
     position: absolute;
     left: 14%;
-    top: 36%;
+    top: 41%;
     height: 90px;
     animation-name: hover_enlarge;
     animation-duration: 8s;
@@ -1140,8 +1141,8 @@ p {
 .dec_overlay #o23 {
     z-index: inherit;
     position: absolute;
-    left: 93%;
-    top: 80%;
+    left: 95%;
+    top: 90%;
     height: 90px;
     animation-name: hover;
     animation-duration: 8s;
@@ -1166,7 +1167,7 @@ p {
 .dec_overlay #o25 {
     z-index: inherit;
     position: absolute;
-    left: 2%;
+    left: 1%;
     top: 1%;
     height: 30px;
     animation-name: hover_enlarge;
@@ -1179,8 +1180,8 @@ p {
 .dec_overlay #o26 {
     z-index: inherit;
     position: absolute;
-    left: 3%;
-    top: 40%;
+    left: 0%;
+    top: 44%;
     height: 30px;
     animation-name: hover;
     animation-duration: 8s;
@@ -1206,7 +1207,7 @@ p {
     z-index: inherit;
     position: absolute;
     left: 20%;
-    top: 6%;
+    top: 12%;
     height: 30px;
     animation-name: hover_enlarge;
     animation-duration: 8s;

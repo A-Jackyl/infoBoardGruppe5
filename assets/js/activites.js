@@ -40,7 +40,7 @@ fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
             let counter = 0;
 
             passedDates.forEach(item => {
-                if (counter >= 7) return;
+                if (counter >= 9) return;
         
                 function convertToTimeString(dateTimeString) {
                     const date = new Date(dateTimeString);

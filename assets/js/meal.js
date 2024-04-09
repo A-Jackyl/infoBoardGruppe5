@@ -8,8 +8,12 @@ fetch('https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?typ
             data.Days.forEach(item => {
                 const menuItemElement = document.createElement('li');
                 menuItemElement.classList.add('meal_list_item');
-                if (currentDay === getDanishDayOfWeek(item.DayName)) {
+                const dayIndex = getDanishDayOfWeek(item.DayName);
+                
+                if (dayIndex === currentDay) {
                     menuItemElement.classList.add('current_day');
+                } else if (dayIndex < currentDay) {
+                    menuItemElement.classList.add('past_day');
                 }
 
                 menuItemElement.innerHTML = `
