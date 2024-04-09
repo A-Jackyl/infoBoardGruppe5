@@ -612,7 +612,7 @@ p {
     margin-top: 30px;
 }
 
-#current_day {
+.current_day {
     animation-name: current_day;
     animation-iteration-count: infinite;
     animation-duration: 1.6s;
