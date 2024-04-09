@@ -20,11 +20,11 @@ async function startWeatherAPI() {
             const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
 
             //    VIEW KODE
-            weatherInfo.innerHTML += `
+            weatherInfo.innerHTML = `
                 <p>Vejr:</p>
                 <p class="weather_temp">${temperature} °C</p>
                 <p class="weather_cond">${description}</p>
-                 <img src="${iconUrl}" alt="" class="weather_cond_icon">`;
+                <img src="${iconUrl}" alt="" class="weather_cond_icon">`;
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
