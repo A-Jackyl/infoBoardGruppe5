@@ -1,4 +1,4 @@
-fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
+function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
     .then(response => response.json())
     .then(data => {
         const container = document.getElementById('schedule');
@@ -17,7 +17,6 @@ fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
                     return classDate > currentDate;
                 });
 
-                setInterval(removePassedItems, 60000)
                 /* console.log('Filtered data after removing passed items:', passedDates); */
             }
 
@@ -109,3 +108,8 @@ fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
         console.error('Error fetching data:', error);
         document.getElementById('activity').innerHTML = '<p>Error fetching data. Please try again later.</p>';
     });
+}
+
+fetchDataAndRender();
+
+setInterval(fetchDataAndRender, 60000);
