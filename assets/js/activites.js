@@ -112,4 +112,4 @@ async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/sche
 
 fetchDataAndRender();
 
-setInterval(fetchDataAndRender, 1000);
+setInterval(fetchDataAndRender, 60000);
