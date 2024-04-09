@@ -1,4 +1,4 @@
-function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
+async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
     .then(response => response.json())
     .then(data => {
         const container = document.getElementById('schedule');
@@ -21,6 +21,7 @@ function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/schedules?
             }
 
         removePassedItems()
+        setInterval(removePassedItems, 60000)
         
         //Kan bruges til at filtrere efter uddanelse.
         /* try {
@@ -48,7 +49,6 @@ function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/schedules?
                     return `${hours}.${minutes}`;
                 }
                 const shortTime = convertToTimeString(item.StartDate);
-
 
                 let imagePath
                 let abbrFolderName
@@ -112,4 +112,4 @@ function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/schedules?
 
 fetchDataAndRender();
 
-setInterval(fetchDataAndRender, 60000);
+setInterval(fetchDataAndRender, 1000);

@@ -686,7 +686,7 @@ p {
 }
 
 #wifi .note_content_wds {
-    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 32% 100%, 0% 90%, 0% 0%);
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 100%, 0% 90%, 0% 0%);
     font-size: 1.3rem;
 }
 

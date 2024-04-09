@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+async function startWeatherAPI() {
     const apiKey = '4d58d6f0a435bf7c5a52e2030f17682d';
     const city = 'Aalborg';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -29,4 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
-});
+};
+
+startWeatherAPI()
+
+setInterval(startWeatherAPI, 1000)
