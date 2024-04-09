@@ -1,0 +1,1216 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --black: #3A3A3A;
+    --blue: #54BBFD;
+    --blue_dark: #A6CFDE;
+    --blue_pale: #DDFBFF;
+    --blue_pale_2: #B0DFF0;
+    --cyan: #7DFFFF;
+    --green: #EAFF79;
+    --green_pale: #FDFBE6;
+    --pink_pale:#FBCEEF;
+    --pink: #FC6985;
+    --pink_pale_2: #FD95A9;
+    --purple: #D0A0FF;
+    --purple_2: #F1AEFC;
+    --purple_3: #F0CFF5;
+    --purple_dark: #F0BBF9;
+    --orange: #FECC7F;
+    --orange_dark: #FDB64C;
+    --magenta: #6B184E;
+    --purple_pale: #FAE0F6;
+    --orange_bus: #FFB640;
+
+}
+
+@font-face {
+    font-family: 'digitalFont';
+    src: url(../fonts/VCR_OSD_MONO_1.001.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'handwritten';
+    /* src: url(../fonts/Caveat-VariableFont_wght.ttf); */
+    src: url(../fonts/ArchitectsDaughter-Regular.ttf)
+}
+
+body {
+    background-image: url(../img/background.svg);
+    color: var(--black);
+    font-family: 'digitalFont', sans-serif;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p {
+    filter: drop-shadow(1px 1px 0px rgba(0,0,0,.1));
+}
+
+/* REUSEABLE */
+
+.window {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.window_content {
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: var(--green_pale);
+    border: 2px solid var(--black);
+}
+
+.window_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transform: translate(5px, 5px);
+    border: 2px solid var(--black);
+    border-radius: 14px;
+}
+
+.window_top {
+    background-color: var(--pink);
+    border-bottom: 2px solid var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding-inline: .5rem;
+}
+
+.window_top img {
+    height: 20px;
+    margin: 0px;
+}
+
+.window_buttons {
+    align-self: center;
+    margin-right: 5px;
+}
+
+/* WINDOW BACKGROUNDS */
+
+#wb1 {
+    background-color: #88C0E4;
+    transform: translate(5px, 5px);
+    z-index: -10;
+}
+
+#wb2 {
+    background-color: #6580B7;
+    transform: translate(10px, 10px);
+    z-index: -11;
+}
+
+#wb3 {
+    background-color: #F3812C;
+    transform: translate(5px, 5px);
+    z-index: -10;
+}
+
+#wb4 {
+    background-color: #D38744;
+    transform: translate(10px, 10px);
+    z-index: -11;
+}
+
+#wb5 {
+    background-color: #E68598;
+    transform: translate(5px, 5px);
+    z-index: -10;
+    border-radius: 14px 14px 0px;
+
+}
+
+#wb6 {
+    background-color: #C66578;
+    transform: translate(10px, 10px);
+    z-index: -11;
+    border-radius: 14px 14px 0px;
+
+}
+
+#wb7 {
+    background-color: #BF96D5;
+    transform: translate(5px, 5px);
+    z-index: -10;
+    border-radius: 14px 14px 0px;
+
+}
+
+#wb8 {
+    background-color: #B968C7;
+    transform: translate(10px, 10px);
+    z-index: -11;
+    border-radius: 14px 14px 0px;
+
+}
+
+.table {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    grid-template-areas: 
+    "title title . . ."
+    "clock class class meals meals"
+    "bus class class meals meals"
+    "bus class class notes notes";
+}
+
+.table_card {
+    margin: 12px;
+}
+
+/* TITLE */
+
+#title {
+    grid-area: title;
+    width: 25vw;
+}
+
+#logo {
+    width: 400px;
+    justify-self: center;
+    margin: 10px auto;
+    display: block;
+}
+
+/* CLOCK */
+
+#clock {
+    grid-area: clock;
+    height: 25rem;
+}
+
+#clock_text {
+    text-align: center;
+    font-size: 3rem;
+    margin-block: 4rem;
+}
+
+#current_time {
+    font-size: 6rem;
+    margin-block: 1rem;
+}
+
+#current_date {
+    font-size: 3.1rem;
+    margin-block: 1.5rem;
+}
+
+#clock .window_top {
+    background-color: var(--cyan);
+}
+
+.blink {
+    animation: blink-animation 2s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* BUS SCHEDULE */
+
+#bus_schedule {
+    grid-area: bus;
+    height: 40rem;
+    width: 15vw;
+    font-size: 1.4rem;
+}
+
+#bus_schedule .window_top {
+    background-color: var(--orange_bus);
+}
+
+#bus_times {
+    margin-block: 3rem;
+}
+
+.bus_time_item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 1rem;
+    align-items: center;
+}
+
+.bus_dest {
+    text-transform: uppercase;
+}
+
+.bus_number {
+    background-color: var(--orange_bus);
+    border-radius: 3px;
+    padding: .3rem;
+    border: 2px solid var(--black);
+}
+
+/* CLASS ACTIVITIES */
+
+#class_schedule {
+    grid-area: class;
+    width: 40vw;
+}
+
+#class_schedule .window_content {
+    border-radius: 14px 14px 0px;
+}
+
+#schedule_title {
+    display: flex;
+    align-items: center;
+}
+
+#schedule_title * {
+    margin-right: 1rem;   
+}
+
+#schedule {
+    display: flex;
+    flex-direction: column;
+    padding: .3rem 2rem;
+    grid-area: main;
+    height: 100%;
+}
+
+#schedule h2 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.schedule_container {
+    display: grid;
+    width: 100%;
+    grid-template-areas: "top scroll" "main scroll";
+    grid-template-columns: 1fr;
+    height: 96.8%;
+}
+
+.schedule_container .scrollbar_vert {
+    grid-area: scroll;
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: unset;
+    border-left: 2px solid var(--black);
+    margin: 0px 0px;
+    height: 100.3%;
+
+}
+
+.schedule_container .scrollbar_vert img {
+    height: 16px;
+}
+
+.schedule_container .scrollbar_vert .scrollbar_left, 
+.schedule_container .scrollbar_vert .scrollbar_grab, 
+.schedule_container .scrollbar_vert .scrollbar_right {
+    background-color: var(--pink_pale_2);
+    z-index: 10;
+}
+
+.schedule_top {
+    grid-area: top;
+    background-color: var(--pink_pale_2 );
+    border-bottom: 2px solid var(--black);
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    height: 34px;
+    padding-left: 2rem;
+    align-items: center;
+    position: relative;
+}
+
+.schedule_top li {
+    list-style-type: none;
+}
+
+#schedule_arrow {
+    transform: rotate(180deg);
+    height: 10px;
+}
+
+#questionmark {
+    background-color: var(--pink);
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--black);
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+.schedule_list_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2.7rem;
+    font-size: 1.8rem;
+}
+
+.abbr_folder {
+    padding-top: 12px;
+    padding-right: 12px;
+}
+
+.abbr_folder_icon {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.folder_icon {
+    height: 50px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+.abbr_folder_name {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    font-size: 1.2rem;
+}
+
+.folder_icon_class_location {
+    white-space: nowrap ;
+    margin-top: .3rem;
+    text-align: center;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 26px;
+}
+
+.schedule_text {
+    display: grid;
+    grid-template-columns:40% 30% 10% 20%;
+    border-bottom: 2px solid var(--black);
+    padding: .5rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.schedule_line {
+    border-right: 2px solid var(--black);
+    height: 30px;
+}
+
+/* MEALS */
+
+#meals {
+    grid-area: meals;
+    width: 32vw;
+}
+
+#meals .window_top {
+    background-color: var(--purple_dark);
+}
+
+#meals .window_content {
+    border-radius: 14px 14px 0px;
+}
+
+.meal_tool_overlay {
+    background-color: var(--purple_pale);
+    display: grid;
+    grid-template-areas: 
+    "toolbar toolbar"
+    "sidebar meal_list";
+    grid-template-rows: 30px 1fr;
+    height: 100%;
+}
+
+.meal_toolbar {
+    grid-area: toolbar;
+    display: flex;
+    gap: 1rem;
+    padding: .4rem;
+    height: 30px;
+}
+
+.meal_toolbar_items {
+    list-style-type: none;
+}
+
+.meal_toolbar_items::first-letter {
+    border-bottom: 2px solid var(--black);
+}
+
+.meal_sidebar_container {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: .2rem;
+    gap: .1rem;
+}
+
+.meal_sidebar_icon {
+    border: 2px solid white;
+    filter: drop-shadow(1px 1px 0px rgba(0,0,0,.4));
+    height: 30px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink_pale);
+    overflow: hidden;
+}
+
+.meal_sidebar_icon img {
+    height: 16px;   
+    object-fit: contain;
+}
+
+.meal_sidebar_icon.tiny img {
+    height: 32px;
+}
+
+#meal_list_main {
+    grid-area: meal_list;
+    background-color: var(--purple_dark);
+    grid-template-areas: "main scroll_right" "scroll_bottom .";
+    grid-template-rows: 1fr 18px;
+    display: grid;
+    border-top: 2px solid var(--black);
+    border-left: 2px solid var(--black);
+    height: 97%;
+    padding-bottom: 1rem;
+}
+
+#meal_list {
+    grid-area: main;
+    padding: .4rem .3rem;
+    margin: .4rem .4rem .4rem .5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    filter: drop-shadow(-3px 3px 0px rgba(0,0,0,.3));
+    background-color: #fff;
+}
+
+.meal_list_item {
+    list-style-type: none;
+    padding: 0px 20px 20px 0px;
+}
+
+.meal_day {
+    padding-left: 1rem;
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+
+.meal_name {
+    font-size: 1.7rem;
+}
+
+.scrollbar_horiz {
+    grid-area: scroll_bottom;
+    width: 100%;
+    height: 18px;
+    background-color: var(--purple_2);
+    display: flex;
+    position: relative;
+    border: 2px solid var(--black);
+    margin: .3rem;
+}
+
+.scrollbar_vert {
+    grid-area: scroll_right;
+    width: 18px;
+    height: 100%;
+    background-color: var(--purple_2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid var(--black);
+    margin: .3rem;
+}
+
+.scrollbar_left {
+    position: absolute;
+    background-color: var(--purple_3);
+    transform: rotate(-90deg);
+    height: 14px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 1px solid var(--black);
+}
+
+.scrollbar_vert .scrollbar_left {
+    position: absolute;
+    background-color: var(--purple_3);
+    transform: rotate(0deg);
+    height: 13px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 1px solid var(--black);
+}
+
+.scrollbar_right {
+    position: absolute;
+    right: 0;
+    background-color: var(--purple_3);
+    transform: rotate(90deg);
+    height: 14px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 2px solid var(--black);
+}
+
+.scrollbar_vert .scrollbar_right {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--purple_3);
+    transform: rotate(180deg);
+    height: 15px;
+    padding: 2px;
+    text-align: center;
+    border-bottom: 2px solid var(--black);
+}
+
+.scrollbar_grab {
+    background-color: var(--purple_3);
+    height: 100%;
+    width: 60px;
+    border-left: 2px solid var(--black);
+    border-right: 2px solid var(--black);
+    margin-left: 50px;
+}
+
+.scrollbar_vert .scrollbar_grab {
+    height: 60px;
+    width: 100%;
+    border-left: unset;
+    border-right: unset;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    margin-left: 0px;
+    margin-top: 30px;
+}
+
+.current_day {
+    animation-name: current_day;
+    animation-iteration-count: infinite;
+    animation-duration: 1.6s;
+}
+
+@keyframes current_day {
+    0% {
+        color: var(--black);
+    }
+    50% {
+        color: var(--pink);
+    }
+    100% {
+        color: var(--black);
+    }
+}
+
+/* NOTES */
+
+.notes_container {
+    grid-area: notes;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 1rem;
+}
+
+.note {
+    font-family: 'handwritten';
+    position: relative;
+    width: 100%;
+}
+
+.note_top {
+    width: 100%;
+    height: 10px;
+    background-color: #E76465;
+    filter: drop-shadow(0px 5px 0px rgba(0,0,0,.2));
+}
+
+#note_top_bl {
+    background-color: var(--blue);
+    
+}
+
+.note_content {
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,.2));
+    height: 100%;
+}
+
+.note_content_wds {
+    height: 100%;
+    width: 90%;
+    background-color: var(--orange);
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 50% 100%, 0% 90%, 0% 0%);
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#wifi .note_content_wds {
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 32% 100%, 0% 90%, 0% 0%);
+}
+
+.note_content_wds p:first-of-type {
+    padding-top: 1rem;
+}
+
+.note_flip {
+    background-color: var(--orange_dark);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 138px;
+    height: 30px;
+}
+
+.note_pin {
+    position: absolute;
+    filter: unset;
+    top: -10px;
+    left: 200px;
+    height: 110px;
+}
+
+#wifi .note_pin {
+    left: 270px;
+}
+
+/* WEATHER */
+
+#weather {
+    /* grid-area: weather; */
+}
+
+.weather_temp {
+    font-size: 3rem;
+}
+
+.weather_cond {
+    font-size: 2rem;
+}
+
+.weather_cond_icon {
+    height: 50px;
+}
+
+/* WIFI */
+
+#wifi {
+    /* grid-area: wifi; */
+}
+
+#cat {
+    position: absolute;
+    top: -47px;
+    left: 0;
+    width: 100px;
+}
+
+/* TASKBAR (FOOTER) */
+
+.taskbar {
+    background-color: var(--blue_dark);
+    width: 100%;
+    height: 64px;
+    position: absolute;
+    bottom: 0;
+    border-top: 3px solid var(--magenta);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#taskbar_left {
+    display: flex;
+    position: absolute;
+    left: 0;
+    gap: 1.5rem;
+    align-items: center;
+    height: 100%;
+}
+
+#taskbar_logo {
+    background-color: var(--blue_pale_2);
+    height: 100%;
+    width: 60px;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 0px 0px rgba(0,0,0,.2));
+    left: 0;
+}
+
+#taskbar_logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+#searchbar {
+    background-color: #fff;
+    border: 3px solid var(--magenta);
+    border-radius: 50px;
+    width: 300px;
+    height: 40px;
+}
+
+#searcbar_line {
+    height: 40px;
+    border-right: 3px solid var(--magenta);
+}
+
+#taskbar_icons {
+    background-color: var(--blue_pale);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    border-radius: 20px;
+    height: 50px;
+    gap: 2rem;
+    margin: 0;
+    filter: drop-shadow(5px 10px 10px rgba(0,0,0,.1));
+}
+
+#taskbar_icons img {
+    height: 40px;
+}
+
+#taskbar_right {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    gap: 2rem;
+}
+
+#taskbar_status_icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#taskbar_status_icons img, #taskbar_status_icons svg {
+    height: 20px;
+}
+
+#taskbar_time {
+    background-color: var(--blue_pale_2);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--magenta);
+    right: 0;
+    padding-inline: 2rem;
+    filter: drop-shadow(-5px 0px 0px rgba(0,0,0,.2));
+}
+
+/* DECORATION OVERLAY */
+
+.dec_overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.dec_underlay {
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+.dec_overlay #o1 {
+    position: absolute;
+    left: 29%;
+    top: 5%;
+    height: 70px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o2 {
+    position: absolute;
+    left: 5%;
+    top: 35%;
+    height: 70px;
+    transform: rotate(168deg);
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o3 {
+    position: absolute;
+    left: 20%;
+    top: 92%;
+    height: 100px;
+    transform: rotate(106deg);
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o4 {
+    position: absolute;
+    left: 72%;
+    top: 85%;
+    height: 70px;
+    transform: rotate(-20deg);
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o5 {
+    z-index: inherit;
+    position: absolute;
+    left: 3%;
+    top: 38%;
+    height: 80px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o6 {
+    z-index: inherit;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    height: 80px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o7 {
+    z-index: inherit;
+    position: absolute;
+    left: 60%;
+    top: 25%;
+    height: 120px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o8 {
+    z-index: inherit;
+    position: absolute;
+    left: 93%;
+    top: 6%;
+    height: 100px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o9 {
+    z-index: inherit;
+    position: absolute;
+    left: 70%;
+    top: 3%;
+    height: 80px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o10 {
+    z-index: inherit;
+    position: absolute;
+    left: 4%;
+    top: 7%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o11 {
+    z-index: inherit;
+    position: absolute;
+    left: 23%;
+    top: 8%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o12 {
+    z-index: inherit;
+    position: absolute;
+    left: 32%;
+    top: 2%;
+    height: 40px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o13 {
+    z-index: inherit;
+    position: absolute;
+    left: 65%;
+    top: 5%;
+    height: 70px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o14 {
+    z-index: inherit;
+    position: absolute;
+    left: 90%;
+    top: 1%;
+    height: 100px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o15 {
+    z-index: inherit;
+    position: absolute;
+    left: 3%;
+    top: 70%;
+    height: 40px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+.dec_underlay #o16 {
+    z-index: inherit;
+    position: absolute;
+    left: 20%;
+    top: 37%;
+    height: 50px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+}
+
+.dec_underlay #o17 {
+    z-index: inherit;
+    position: absolute;
+    left: 970px;
+    top: 80px;
+    height: 50px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o18 {
+    z-index: inherit;
+    position: absolute;
+    left: 2%;
+    bottom: -.85%;
+    height: 280px;
+}
+
+.dec_overlay #o19 {
+    z-index: inherit;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    height: 150px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o20 {
+    z-index: inherit;
+    position: absolute;
+    left: 60%;
+    top: 2%;
+    height: 100px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o21 {
+    z-index: inherit;
+    position: absolute;
+    left: 80%;
+    top: 5%;
+    height: 90px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o22 {
+    z-index: inherit;
+    position: absolute;
+    left: 14%;
+    top: 36%;
+    height: 90px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o23 {
+    z-index: inherit;
+    position: absolute;
+    left: 93%;
+    top: 80%;
+    height: 90px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o24 {
+    z-index: inherit;
+    position: absolute;
+    left: 68%;
+    top: 2%;
+    height: 40px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o25 {
+    z-index: inherit;
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o26 {
+    z-index: inherit;
+    position: absolute;
+    left: 3%;
+    top: 40%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o27 {
+    z-index: inherit;
+    position: absolute;
+    left: 1%;
+    top: 90%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+.dec_overlay #o28 {
+    z-index: inherit;
+    position: absolute;
+    left: 20%;
+    top: 6%;
+    height: 30px;
+    animation-name: hover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    animation-timing-function: linear;
+}
+
+@keyframes hover {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, 30px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}

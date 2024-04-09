@@ -1,13 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/squiggly.svg">
+    <title>Infoboard - Gruppe 5</title>
 </head>
 <body>
-
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-
+    <main>
+        <section class="table">
+            <div id="title" class="window table_card">
+                <div class="window_content">
+                    <div class="window_top">
+                        <h2>UDDANNELSE.jpg</h2>
+                    </div>
+                    <img id="logo" src="assets/img/logo.svg" alt="logo.svg">
+                </div>
+            </div>
+            <div id="clock" class="window table_card">
+                <div class="window_content">
+                    <div id="here" class="window_top">
+                        <h2>KLOK OG DATA.exe</h2>
+                    </div>
+                    <div class="clock" id="clock_text">
+                        <p>KLOKKEN ER</p>
+                        <p id="current_time"><span class="hours"></span><span class="blink">:</span><span class="minutes"></span></p>
+                        <p ></p>
+                        <div id="current_date" class="date"></div>
+                    </div>
+                </div>
+                <div id="wb1" class="window_back"></div>
+                <div id="wb2" class="window_back"></div>
+            </div>
+            <div id="bus_schedule" class="window table_card">
+                <div class="window_content">
+                    <div id="here" class="window_top">
+                        <h2>BUSTIDER.exe</h2>
+                    </div>
+                    <ul id="bus_times">
+                    </ul>
+                </div>
+                <div id="wb3" class="window_back"></div>
+                <div id="wb4" class="window_back"></div>
+            </div>
+            <div id="class_schedule" class="window table_card">
+                <div class="window_content">
+                    <div class="window_top">
+                        <div id="schedule_title">
+                            <h2>Bibliotek</h2><img style="transform: rotate(90deg); height: 10px;" src="assets/img/arrow.svg" alt="arrow.svg"><h2>Dokumenter</h2><img style="transform: rotate(90deg); height: 10px;" src="assets/img/arrow.svg" alt="arrow.svg"><h2>Skema</h2>
+                        </div>
+                    </div>
+                    <div class="schedule_container">
+                        <ul class="schedule_top">
+                            <li>New folder</li>
+                            <li>Burn</li>
+                            <li>Share with <img id="schedule_arrow" src="assets/img/arrow.svg" alt=""></li>
+                            <li id="questionmark">?</li>
+                        </ul>
+                        <ul id="schedule">
+                            <h2>SKEMA.exe</h2>
+                        </ul>
+                        <div class="scrollbar_vert"><img class="scrollbar_left" src="assets/img/arrow.svg" alt=""><div class="scrollbar_grab"><img class="scrollbar_right" src="assets/img/arrow.svg" alt=""></div></div>
+                    </div>
+                </div>
+                <div id="wb5" class="window_back"></div>
+                <div id="wb6" class="window_back"></div>
+            </div>
+            <div id="meals" class="window table_card">
+                <div class="window_content">
+                    <div class="window_top">
+                        <h2>FROKOST</h2>
+                    </div>
+                    <div class="meal_tool_overlay">
+                        <ul class="meal_toolbar">
+                            <li class="meal_toolbar_items">File</li>
+                            <li class="meal_toolbar_items">Edit</li>
+                            <li class="meal_toolbar_items">View</li>
+                            <li class="meal_toolbar_items">Image</li>
+                            <li class="meal_toolbar_items">Options</li>
+                            <li class="meal_toolbar_items">Help</li>
+                        </ul>
+                        <div class="meal_sidebar">
+                            <div class="meal_sidebar_container">
+                                <div class="meal_sidebar_icon"><img src="assets/img/polygonal_selection.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/rectangle_selection.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/eraser.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/paint_bucket.svg" alt=""></div>
+                                <div class="meal_sidebar_icon tiny"><img src="assets/img/eyedropper.svg" alt=""></div>
+                                <div class="meal_sidebar_icon tiny"><img src="assets/img/magnify.svg" alt=""></div>
+                                <div class="meal_sidebar_icon tiny"><img src="assets/img/pencil.svg" alt=""></div>
+                                <div class="meal_sidebar_icon tiny"><img src="assets/img/brush.svg" alt=""></div>
+                                <div class="meal_sidebar_icon tiny"><img src="assets/img/spray.svg" alt=""></div>
+                                <div class="meal_sidebar_icon tiny"><img src="assets/img/text.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/line_diagonal.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/line_curved.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/rectangle.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/polygonal_shape.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/ellipse.svg" alt=""></div>
+                                <div class="meal_sidebar_icon"><img src="assets/img/rectangle_curved.svg" alt=""></div>
+                            </div>
+                        </div>
+                        <div id="meal_list_main">
+                            <ul id="meal_list"></ul>
+                            <div class="scrollbar_vert"><img class="scrollbar_left" src="assets/img/arrow.svg" alt=""><div class="scrollbar_grab"><img class="scrollbar_right" src="assets/img/arrow.svg" alt=""></div></div>
+                            <div class="scrollbar_horiz"><img class="scrollbar_left" src="assets/img/arrow.svg" alt=""><div class="scrollbar_grab"><img class="scrollbar_right" src="assets/img/arrow.svg" alt=""></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="wb7" class="window_back"></div>
+                <div id="wb8" class="window_back"></div>
+            </div>
+            <div class="notes_container">
+                <div id="weather" class="note table_card">
+                    <div class="note_content">
+                        <div class="note_content_wds" id="weather_api">
+                            <div class="note_top" id="note_top_bl"></div>
+                        </div>
+                    </div>
+                    <img class="note_pin" src="assets/img/pin.svg" alt="pin.svg">
+                </div>
+                <div id="wifi" class="note table_card">
+                    <div class="note_content">
+                        <div class="note_content_wds">
+                            <div class="note_top"></div>
+                            <p>Wifi info</p>
+                            <p>Brugernavn:  itcn/wireless</p>
+                            <p>Wifi:  “Undervisning”</p>
+                            <p>Password:  billede24-maske</p>
+                        </div>
+                    </div>
+                    <img id="cat" src="assets/img/cat.svg" alt="cat.svg">
+                    <img class="note_pin" src="assets/img/pin_purple.svg" alt="pin_purple.svg">
+                </div>
+            </div>
+        </section>
+        <section class="taskbar">
+            <div id="taskbar_left">
+                <div id="taskbar_logo">
+                    <img src="assets/img/corner_logo.svg" alt="corner_logo.svg">
+                </div>
+                <div id="searchbar">
+                </div>
+                <div id="searcbar_line"></div>
+            </div>
+            <div id="taskbar_icons">
+                <img src="assets/img/file_explorer.svg" alt="file_explorer">
+                <img src="assets/img/chrome.svg" alt="chrome">
+                <img src="assets/img/photoshop.svg" alt="photoshop">
+                <img src="assets/img/dreamweaver.svg" alt="dreamweaver">
+                <img src="assets/img/appstore.svg" alt="appstore">
+                <img src="assets/img/music.svg" alt="music">
+                <img src="assets/img/Photos.svg" alt="Photos">
+                <div id="searcbar_line"></div>
+                <img src="assets/img/contacts.svg" alt="contacts">
+                <img src="assets/img/messages.svg" alt="messages">
+                <img src="assets/img/podcasts.svg" alt="podcasts">
+            </div>
+            <div id="taskbar_right">
+                <div id="taskbar_status_icons">
+                    <svg style="margin-right: -12px;" xmlns="http://www.w3.org/2000/svg" width="53" height="45" viewBox="0 0 53 45">
+                        <path id="Arrow" d="M26.5,0,53,45H0Z" fill="var(--magenta)"/>
+                    </svg>
+                    <img src="assets/img/menu_cloud.svg" alt="menu_cloud">
+                    <img src="assets/img/display.svg" alt="display">
+                    <img src="assets/img/Speaker.svg" alt="Speaker">
+                </div>
+                <div class="clock" id="taskbar_time">
+                    <p><span class="hours"></span><span class="blink">:</span><span class="minutes"></span></p>
+                    <div class="date"></div>
+                </div>
+            </div>
+        </section>
+        <section class="dec_overlay">
+            <img id="o1" src="assets/img/squiggly.svg" alt="">
+            <img id="o2" src="assets/img/squiggly_purple.svg" alt="">
+            <img id="o3" src="assets/img/squiggly_blue.svg" alt="">
+            <img id="o4" src="assets/img/squiggly_purple.svg" alt="">
+            <img id="o18" src="assets/img/bus.svg" alt="">
+            <img id="o19" src="assets/img/thumb.svg" alt="">
+            <img id="o20" src="assets/img/lightning.svg" alt="">
+            <img id="o21" src="assets/img/lightning_blue.svg" alt="">
+            <img id="o22" src="assets/img/lightning_yellow.svg" alt="">
+            <img id="o23" src="assets/img/lightning_red.svg" alt="">
+            <img id="o24" src="assets/img/circle.svg" alt="">
+            <img id="o25" src="assets/img/circle.svg" alt="">
+            <img id="o26" src="assets/img/circle_orange.svg" alt="">
+            <img id="o27" src="assets/img/circle_orange.svg" alt="">
+            <img id="o28" src="assets/img/circle_white.svg" alt="">
+        </section>
+        <section class="dec_underlay">
+            <img id="o5" src="assets/img/cloud.svg" alt="">
+            <img id="o6" src="assets/img/cloud.svg" alt="">
+            <img id="o7" src="assets/img/cloud.svg" alt="">
+            <img id="o8" src="assets/img/cloud.svg" alt="">
+            <img id="o9" src="assets/img/cloud.svg" alt="">
+            <img id="o10" src="assets/img/star.svg" alt="">
+            <img id="o11" src="assets/img/star.svg" alt="">
+            <img id="o12" src="assets/img/star.svg" alt="">
+            <img id="o13" src="assets/img/star.svg" alt="">
+            <img id="o14" src="assets/img/star.svg" alt="">
+            <img id="o15" src="assets/img/star.svg" alt="">
+            <img id="o16" src="assets/img/star.svg" alt="">
+            <img id="o17" src="assets/img/star.svg" alt="">
+        </section>
+    </main>
+    <script src="assets/js/windowFormatting.js"></script>
+    <script src="assets/js/weather.js"></script>
+    <script src="assets/js/meal.js"></script>
+    <script src="assets/js/bus.js"></script>
+    <script src="assets/js/activites.js"></script>
+    <script src="assets/js/clock.js"></script>
+    <!-- <script src="assets/js/windowBack.js"></script> -->
 </body>
 </html>
-
