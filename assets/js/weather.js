@@ -1,5 +1,5 @@
 async function startWeatherAPI() {
-    const apiKey = '4d58d6f0a435bf7c5a52e2030f17682d';
+    const apiKey = '55d9f330a8bbf72b284138c07f5e7885';
     const city = 'Aalborg';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     
@@ -33,4 +33,4 @@ async function startWeatherAPI() {
 
 startWeatherAPI()
 
-setInterval(startWeatherAPI, 1000)
+setInterval(startWeatherAPI, 60000)
