@@ -49,6 +49,10 @@ h2 {
     font-size: 1rem;
 }
 
+h3 {
+    margin: 1rem;
+}
+
 p {
     filter: drop-shadow(1px 1px 0px rgba(0,0,0,.1));
 }
@@ -157,6 +161,8 @@ p {
 
 }
 
+/* TABLE */
+
 .table {
     display: grid;
     width: 100%;
@@ -170,7 +176,8 @@ p {
     "clock class class meals meals"
     "bus class class meals meals"
     "bus class class notes notes";
-    grid-template-rows: 14% 35% 21% 30%;
+    grid-template-rows: 12% 34% 24% 30%;
+    grid-template-columns: 19% 20% 29% 12%;
 }
 
 .table_card {
@@ -181,14 +188,13 @@ p {
 
 #title {
     grid-area: title;
-    width: 30vw;
 }
 
 #logo {
-    width: 400px;
     justify-self: center;
     margin: 10px auto;
     display: block;
+    height: 30px;
 }
 
 /* CLOCK */
@@ -233,7 +239,6 @@ p {
 #bus_schedule {
     grid-area: bus;
     /* height: 40rem; */
-    width: 20vw;
     font-size: 1.4rem;
 }
 
@@ -267,7 +272,6 @@ p {
 
 #class_schedule {
     grid-area: class;
-    width: 40vw;
 }
 
 #class_schedule .window_content {
@@ -409,7 +413,7 @@ p {
 
 .folder_icon_class_location {
     white-space: nowrap ;
-    margin-top: 0rem;
+    margin-top: -.3rem;
     text-align: center;
     font-size: 1.2rem;
     position: absolute;
@@ -439,7 +443,6 @@ p {
 
 #meals {
     grid-area: meals;
-    width: 32vw;
 }
 
 #meals .window_top {
@@ -728,11 +731,12 @@ p {
 }
 
 .weather_temp {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin: 1rem;
 }
 
 .weather_cond {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .weather_cond_icon {
@@ -750,8 +754,12 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-top: 2rem;
+    margin-top: rem;
     font-size: 1.3rem;
+}
+
+#wifi_content p {
+    margin: .5rem;
 }
 
 #cat {
@@ -879,7 +887,7 @@ p {
 
 .dec_overlay #o1 {
     position: absolute;
-    left: 30%;
+    left: 37%;
     top: 7%;
     height: 70px;
     animation-name: hover_enlarge;
@@ -904,8 +912,8 @@ p {
 
 .dec_overlay #o3 {
     position: absolute;
-    left: 20%;
-    top: 89%;
+    left: 17%;
+    top: 91%;
     height: 90px;
     transform: rotate(106deg);
     animation-name: hover;
@@ -917,7 +925,7 @@ p {
 
 .dec_overlay #o4 {
     position: absolute;
-    left: 78%;
+    left: 82%;
     top: 93%;
     height: 70px;
     transform: rotate(-20deg);
@@ -1108,7 +1116,7 @@ p {
 .dec_overlay #o19 {
     z-index: inherit;
     position: absolute;
-    left: 40%;
+    left: 42%;
     top: 0%;
     height: 150px;
     animation-name: hover_enlarge;
@@ -1160,7 +1168,7 @@ p {
 .dec_overlay #o23 {
     z-index: inherit;
     position: absolute;
-    left: 95%;
+    left: 97%;
     top: 90%;
     height: 90px;
     animation-name: hover;

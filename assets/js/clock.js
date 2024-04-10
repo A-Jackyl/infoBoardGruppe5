@@ -12,6 +12,12 @@ function updateClockAndDate() {
     day = (day < 10 ? '0' : '') + day;
     month = (month < 10 ? '0' : '') + month;
 
+    // Update the date display
+    const dateElements = document.querySelectorAll('.date');
+    dateElements.forEach(dateElements => {
+        dateElements.innerText = `${day}/${month}/${year}`;
+    });
+    
     // Update the clock display
     const clockElements = document.querySelectorAll('.clock');
     clockElements.forEach(clockElement => {
@@ -21,11 +27,7 @@ function updateClockAndDate() {
         minutesElement.innerText = minutes;
     });
 
-    // Update the date display
-    const dateElements = document.querySelectorAll('.date');
-    dateElements.forEach(dateElement => {
-        dateElement.innerText = `${day}/${month}/${year}`;
-    });
+
 
 }
 

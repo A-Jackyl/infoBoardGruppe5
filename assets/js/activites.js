@@ -58,14 +58,16 @@ async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/sche
             </li>
         `;
             passedDates.forEach(item => {
-                if (counter >= 9) return;
+                if (counter >= 8) return;
                 const team = item.Team.toUpperCase()
         
                 function convertToTimeString(dateTimeString) {
                     const date = new Date(dateTimeString);
-                    const hours = date.getHours();
-                    const minutes = date.getMinutes();
-                    return `${hours}.${minutes}`;
+                    let hours = date.getHours();
+                    hours = (hours < 10 ? '0' : '') + hours;
+                    let minutes = date.getMinutes();
+                    minutes = (minutes < 10 ? '0' : '') + minutes;
+                    return `${hours}:${minutes}`;
                 }
                 const shortTime = convertToTimeString(item.StartDate);
 
