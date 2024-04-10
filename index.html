@@ -25,8 +25,8 @@
                     </div>
                     <div class="clock" id="clock_text">
                         <p>KLOKKEN ER</p>
-                        <p id="current_time"><span class="hours"></span><span class="blink">:</span><span class="minutes"></span></p>
-                        <p ></p>
+                        <p id="current_time">
+                            <span class="hours"></span><span class="blink">:</span><span class="minutes"></span></p>
                         <div id="current_date" class="date"></div>
                     </div>
                 </div>
@@ -110,27 +110,32 @@
                 <div id="wb8" class="window_back"></div>
             </div>
             <div class="notes_container">
-                <div id="weather" class="note table_card">
-                    <div class="note_content">
-                        <div class="note_content_wds">
-                            <div class="note_top" id="note_top_bl"></div>
+                <div id="weather" class="window table_card">
+                    <div class="window_content">
+                        <div id="here" class="window_top">
+                            <h2>VEJR.exe</h2>
+                        </div>
+                        <div class="clock" id="clock_text">
                             <div id="weather_api"></div>
                         </div>
                     </div>
-                    <img class="note_pin" src="assets/img/pin.svg" alt="pin.svg">
+                    <div id="wb1" class="window_back"></div>
+                    <div id="wb2" class="window_back"></div>
                 </div>
-                <div id="wifi" class="note table_card">
-                    <div class="note_content">
-                        <div class="note_content_wds">
-                            <div class="note_top"></div>
-                            <p>Wifi info</p>
-                            <p>Brugernavn:  itcn/wireless</p>
-                            <p>Wifi:  “Undervisning”</p>
-                            <p>Password: <br> billede24-maske</p>
+                <div id="wifi" class="window table_card">
+                    <div class="window_content">
+                        <div id="here" class="window_top">
+                            <h2>WIFI.txt</h2>
+                        </div>
+                        <div id="wifi_content">
+                            <h3>Wifi info</h3>
+                            <p>Brugernavn: <br>itcn/wireless</p>
+                            <p>Wifi: <br>“Undervisning”</p>
+                            <p>Password: <br>billede24-maske</p>
                         </div>
                     </div>
-                    <img id="cat" src="assets/img/cat.svg" alt="cat.svg">
-                    <img class="note_pin" src="assets/img/pin_purple.svg" alt="pin_purple.svg">
+                    <div id="wb5" class="window_back"></div>
+                    <div id="wb6" class="window_back"></div>
                 </div>
             </div>
         </section>
