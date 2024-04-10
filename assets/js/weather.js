@@ -16,13 +16,14 @@ async function startWeatherAPI() {
             const temperature = data.main.temp;
             const description = data.weather[0].description;
             const icon = data.weather[0].icon;
+            const roundedTemp = Math.ceil(temperature);
             
             const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
 
             //    VIEW KODE
             weatherInfo.innerHTML = `
                 <p>Vejr:</p>
-                <p class="weather_temp">${temperature} °C</p>
+                <p class="weather_temp">${roundedTemp} °C</p>
                 <p class="weather_cond">${description}</p>
                 <img src="${iconUrl}" alt="" class="weather_cond_icon">`;
         })

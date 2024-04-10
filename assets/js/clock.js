@@ -26,6 +26,7 @@ function updateClockAndDate() {
     dateElements.forEach(dateElement => {
         dateElement.innerText = `${day}/${month}/${year}`;
     });
+
 }
 
 // Call updateClockAndDate every second to update the time and date

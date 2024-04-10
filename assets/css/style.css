@@ -195,7 +195,6 @@ p {
 
 #clock {
     grid-area: clock;
-    /* height: 20rem; */
 }
 
 #clock_text {
@@ -214,7 +213,8 @@ p {
     margin-block: 1.5rem;
 }
 
-#clock .window_top {
+#clock .window_top,
+#weather .window_top {
     background-color: var(--cyan);
 }
 
@@ -373,7 +373,7 @@ p {
     width: 100%;
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .abbr_folder {
@@ -403,6 +403,10 @@ p {
     font-size: 1.2rem;
 }
 
+.abbr_folder_name.top {
+    left: -5px;
+}
+
 .folder_icon_class_location {
     white-space: nowrap ;
     margin-top: 0rem;
@@ -414,7 +418,7 @@ p {
 
 .schedule_text {
     display: grid;
-    grid-template-columns:40% 30% 10% 20%;
+    grid-template-columns:20% 30% 30% 5% 15%;
     border-bottom: 2px solid var(--black);
     padding: .5rem;
     align-items: center;
@@ -425,6 +429,10 @@ p {
 .schedule_line {
     border-right: 2px solid var(--black);
     height: 30px;
+}
+
+.schedule_time {
+    text-align: right;
 }
 
 /* MEALS */
@@ -735,6 +743,15 @@ p {
 
 #wifi {
     /* grid-area: wifi; */
+    text-align: center;
+}
+
+#wifi_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 2rem;
+    font-size: 1.3rem;
 }
 
 #cat {

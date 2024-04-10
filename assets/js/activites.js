@@ -39,9 +39,27 @@ async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/sche
           if (data && data.value) {
             let counter = 0;
 
-            container.innerHTML = `<h2>SKEMA.exe</h2>`
+            container.innerHTML = `<h2>SKEMA.exe</h2>
+            <li class="schedule_list_item">
+            <div class="abbr_folder">
+            <div class="abbr_folder_icon">
+                <img class="folder_icon" src="" alt="">
+                <p class="abbr_folder_name top">Rum</p>
+            </div>
+                <p class="folder_icon_class_location"></p>
+            </div>
+            <div class="schedule_text">
+                <p class="full_course_name">Hold</p>
+                <p class="subject_name">Fag</p>
+                <p class="subject_name">Education</p>
+                <div class="schedule_line"></div>
+                <p class="schedule_time">Kl.</p>
+            </div>
+            </li>
+        `;
             passedDates.forEach(item => {
                 if (counter >= 9) return;
+                const team = item.Team.toUpperCase()
         
                 function convertToTimeString(dateTimeString) {
                     const date = new Date(dateTimeString);
@@ -87,8 +105,9 @@ async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/sche
                         <p class="folder_icon_class_location">${item.Room}</p>
                     </div>
                     <div class="schedule_text">
-                        <p class="full_course_name">WU10102</p>
+                        <p class="full_course_name">${team}</p>
                         <p class="subject_name">${item.Education}</p>
+                        <p class="subject_name">${item.Subject}</p>
                         <div class="schedule_line"></div>
                         <p class="schedule_time">${shortTime}</p>
                     </div>
