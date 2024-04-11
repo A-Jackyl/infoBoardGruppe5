@@ -973,6 +973,7 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear;
+    display: none;
 }
 
 .dec_underlay #o8 {
@@ -986,6 +987,7 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 3s;
     animation-timing-function: linear;
+    display: none;
 }
 
 .dec_underlay #o9 {
@@ -1064,6 +1066,7 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear;
+    display: none;
 }
 
 .dec_underlay #o15 {
@@ -1102,6 +1105,7 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 1s;
     animation-timing-function: linear;
+    display: none;
 }
 
 .dec_overlay #o18 {
@@ -1176,6 +1180,7 @@ p {
     animation-iteration-count: infinite;
     animation-delay: -2s;
     animation-timing-function: linear;
+    display: none;
 }
 
 .dec_overlay #o24 {
@@ -1265,4 +1270,257 @@ p {
     100% {
         transform: scale(100%) rotate(0deg);
     }
+}
+@media screen and (max-width: 480px) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        --black: #3A3A3A;
+        --blue: #54BBFD;
+        --blue_dark: #A6CFDE;
+        --blue_pale: #DDFBFF;
+        --blue_pale_2: #B0DFF0;
+        --cyan: #7DFFFF;
+        --green: #EAFF79;
+        --green_pale: #FDFBE6;
+        --pink_pale:#FBCEEF;
+        --pink: #FC6985;
+        --pink_pale_2: #FD95A9;
+        --purple: #D0A0FF;
+        --purple_2: #F1AEFC;
+        --purple_3: #F0CFF5;
+        --purple_dark: #F0BBF9;
+        --orange: #FECC7F;
+        --orange_dark: #FDB64C;
+        --magenta: #6B184E;
+        --purple_pale: #FAE0F6;
+        --orange_bus: #FFB640;
+    }
+
+    @font-face {
+        font-family: 'digitalFont';
+        src: url(../fonts/VCR_OSD_MONO_1.001.ttf) format(truetype);
+    }
+
+    @font-face {
+        font-family: 'handwritten';
+        src: url(../fonts/ArchitectsDaughter-Regular.ttf)
+    }
+
+    body {
+        background-image: url(../img/background.svg);
+        color: var(--black);
+        font-family: 'digitalFont', sans-serif;
+        overflow: hidden;
+        height: 100lvh;
+        font-size: 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        margin: 1rem;
+    }
+
+    p {
+        filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, .1));
+    }
+
+    /* REUSEABLE */
+
+    .window {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    .window_content {
+        overflow: hidden;
+        border-radius: 14px;
+        background-color: var(--green_pale);
+        border: 2px solid var(--black);
+    }
+
+    .window_back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transform: translate(5px, 5px);
+        border: 2px solid var(--black);
+        border-radius: 14px;
+    }
+
+    .window_top {
+        background-color: var(--pink);
+        border-bottom: 2px solid var(--black);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+        padding-inline: .5rem;
+    }
+
+    .window_top img {
+        height: 20px;
+        margin: 0px;
+    }
+
+    .window_buttons {
+        align-self: center;
+        margin-right: 5px;
+    }
+
+    /* WINDOW BACKGROUNDS */
+
+    #wb1 {
+        background-color: #88C0E4;
+        transform: translate(5px, 5px);
+        z-index: -10;
+    }
+
+    #wb2 {
+        background-color: #6580B7;
+        transform: translate(10px, 10px);
+        z-index: -11;
+    }
+
+    #wb3 {
+        background-color: #F3812C;
+        transform: translate(5px, 5px);
+        z-index: -10;
+    }
+
+    #wb4 {
+        background-color: #D38744;
+        transform: translate(10px, 10px);
+        z-index: -11;
+    }
+
+    #wb5 {
+        background-color: #E68598;
+        transform: translate(5px, 5px);
+        z-index: -10;
+        border-radius: 14px 14px 0px;
+    }
+
+    #wb6 {
+        background-color: #C66578;
+        transform: translate(10px, 10px);
+        z-index: -11;
+        border-radius: 14px 14px 0px;
+    }
+
+    #wb7 {
+        background-color: #BF96D5;
+        transform: translate(5px, 5px);
+        z-index: -10;
+        border-radius: 0px 0px 14px;
+    }
+
+    #wb8 {
+        background-color: #8E59A8;
+        transform: translate(10px, 10px);
+        z-index: -11;
+        border-radius: 0px 0px 14px;
+    }
+
+    /* TABLE */
+
+    .table {
+        display: grid;
+        width: 100%;
+        padding: 1rem;
+        justify-content: center;
+        grid-template-areas: 
+        "title title"
+        "clock clock"
+        "class class"
+        "meals meals"
+        "bus bus"
+        "notes notes";
+        grid-template-rows: repeat(6, auto);
+        grid-template-columns: 1fr;
+    }
+
+    /* TITLE */
+
+    #title {
+        grid-area: title;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* CLOCK */
+
+    #clock {
+        grid-area: clock;
+    }
+
+    /* CLASS SCHEDULE */
+
+    #class_schedule {
+        grid-area: class;
+    }
+
+    /* MEALS */
+
+    #meals {
+        grid-area: meals;
+    }
+
+    /* BUS SCHEDULE */
+
+    #bus_schedule {
+        grid-area: bus;
+    }
+
+    /* NOTES */
+
+    .notes_container {
+        grid-area: notes;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .note {
+        width: 100%;
+    }
+
+    /* TASKBAR */
+
+    /* .taskbar {
+        background-color: var(--blue_dark);
+        width: 100%;
+        height: 64px;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        z-index: 1000;
+        display: none;
+    }
+
+    #taskbar_left {
+        display: none;
+    }
+
+    #taskbar_icons {
+        gap: 1rem;
+    }
+
+    #taskbar_right {
+        display: flex;
+        gap: 1rem;
+    } */
+    
 }
