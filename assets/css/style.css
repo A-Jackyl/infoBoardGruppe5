@@ -1110,6 +1110,7 @@ p {
     left: 2%;
     bottom: -.85%;
     height: 280px;
+    display: none;
 }
 
 .dec_overlay #o19 {
