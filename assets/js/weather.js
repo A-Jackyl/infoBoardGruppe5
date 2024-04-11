@@ -3,7 +3,6 @@ async function startWeatherAPI() {
     const city = 'Aalborg';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     
-    // MODAL KODE
     fetch(apiUrl)
         .then(response => {
             if (!response.ok) {
@@ -14,13 +13,11 @@ async function startWeatherAPI() {
         .then(data => {
             const weatherInfo = document.getElementById('weather_api');
             const temperature = data.main.temp;
-            const description = data.weather[0].description;
+            const description = translateWeatherToDanish(data.weather[0].description); // Translate weather description to Danish
             const icon = data.weather[0].icon;
             const roundedTemp = Math.ceil(temperature);
-            
             const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
 
-            //    VIEW KODE
             weatherInfo.innerHTML = `
                 <p>Vejr:</p>
                 <p class="weather_temp">${roundedTemp} °C</p>
@@ -30,8 +27,26 @@ async function startWeatherAPI() {
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
-};
+}
 
-startWeatherAPI()
+// Function to translate weather conditions to Danish
+function translateWeatherToDanish(weatherDescription) {
+    switch (weatherDescription) {
+        case 'Clear':
+            return 'Klart';
+        case 'Clouds':
+            return 'Skyer';
+        case 'Rain':
+            return 'Regn';
+        case 'Drizzle':
+            return 'Dis';
+        case 'Thunderstorm':
+            return 'Tordenvejr';
+        default:
+            return weatherDescription;
+    }
+}
 
-setInterval(startWeatherAPI, 60000)
+startWeatherAPI();
+
+setInterval(startWeatherAPI, 60000);
