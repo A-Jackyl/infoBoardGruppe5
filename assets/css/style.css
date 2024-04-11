@@ -973,7 +973,6 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear;
-    display: none;
 }
 
 .dec_underlay #o8 {
@@ -987,7 +986,6 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 3s;
     animation-timing-function: linear;
-    display: none;
 }
 
 .dec_underlay #o9 {
@@ -1066,7 +1064,6 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-timing-function: linear;
-    display: none;
 }
 
 .dec_underlay #o15 {
@@ -1105,7 +1102,6 @@ p {
     animation-iteration-count: infinite;
     animation-delay: 1s;
     animation-timing-function: linear;
-    display: none;
 }
 
 .dec_overlay #o18 {
@@ -1114,7 +1110,6 @@ p {
     left: 2%;
     bottom: -.85%;
     height: 280px;
-    display: none;
 }
 
 .dec_overlay #o19 {
@@ -1180,7 +1175,6 @@ p {
     animation-iteration-count: infinite;
     animation-delay: -2s;
     animation-timing-function: linear;
-    display: none;
 }
 
 .dec_overlay #o24 {
@@ -1522,5 +1516,10 @@ p {
         display: flex;
         gap: 1rem;
     } */
+
+    .dec_overlay,
+    .dec_underlay {
+        display: none;
+    }
     
 }
