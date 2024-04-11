@@ -13,10 +13,13 @@ async function startWeatherAPI() {
         .then(data => {
             const weatherInfo = document.getElementById('weather_api');
             const temperature = data.main.temp;
-            const description = translateWeatherToDanish(data.weather[0].description); // Translate weather description to Danish
+            const description = translateWeatherToDanish(data.weather[0].main); // Translate weather description to Danish
             const icon = data.weather[0].icon;
+            const newIcon = translateWeatherIcon(data.weather[0].icon)
+            console.log(icon);
             const roundedTemp = Math.ceil(temperature);
-            const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
+            /* const iconUrl = `http://openweathermap.org/img/w/${icon}.png`; */
+            const iconUrl = `assets/img/${newIcon}`;
 
             weatherInfo.innerHTML = `
                 <p>Vejr:</p>
@@ -32,18 +35,53 @@ async function startWeatherAPI() {
 // Function to translate weather conditions to Danish
 function translateWeatherToDanish(weatherDescription) {
     switch (weatherDescription) {
+        case 'Thunderstorm':
+            return 'Tordenvejr';
+        case 'Drizzle':
+            return 'Dis';
+        case 'Rain':
+            return 'Regn';
+        case 'Snow':
+            return 'Sne';
         case 'Clear':
             return 'Klart';
         case 'Clouds':
             return 'Skyer';
-        case 'Rain':
-            return 'Regn';
-        case 'Drizzle':
+        case 'Mist':
+            return 'Tåge';
+        case 'Smoke':
+            return 'Røg';
+        case 'Haze':
             return 'Dis';
-        case 'Thunderstorm':
-            return 'Tordenvejr';
+        case 'Dust':
+            return 'Støv';
+        case 'Ash':
+            return 'Aske';
+        case 'Squall':
+            return 'Vindstød';
+        case 'Tornado':
+            return 'Tornado';
         default:
-            return weatherDescription;
+            return '';
+    }
+}
+
+function translateWeatherIcon(weatherIcon) {
+    switch (weatherIcon) {
+        case '01d':
+            return '01d.svg';
+        case '02d':
+            return '02d.svg';
+        case '03d':
+            return '03d.svg';
+        case '04d':
+            return '04d.svg';
+        case '04d':
+            return '04d.svg';
+        case '04d':
+            return '04d.svg';
+        default:
+            return '';
     }
 }
 
