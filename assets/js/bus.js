@@ -28,10 +28,10 @@ async function fetchDepartureBoard() {
 
                 // Calculate time difference in minutes
                 const timeDifference = Math.max(Math.ceil((departureTime - currentTime) / 1000 / 60), 0); // in minutes
-                console.log(timeDifference);
 
-                const busDistance = 238-(-19.866*timeDifference)
+                const busDistance = 239+(-19.9333333333*timeDifference);
 
+                console.log(busDistance);
 
                 departureElement.innerHTML = `
                     <p class="bus_number">${line}</p>
@@ -39,7 +39,7 @@ async function fetchDepartureBoard() {
                     <p class="bus_arrival">${timeDifference} min</p>
                     <div class="bus_animation">
                         <img class="school_icon" src="assets/img/school.svg" alt="">
-                        <img style="left: ${busDistance}px;" class="bus_icon" src="assets/img/bus.svg" alt="">
+                        <img style="left:${busDistance}px;" class="bus_icon" src="assets/img/bus.svg" alt="">
                         <div class="bus_line"></div>
                     </div>
                     `;
@@ -57,4 +57,4 @@ async function fetchDepartureBoard() {
 
 fetchDepartureBoard()
 
-/* setInterval(fetchDepartureBoard, 20000) */
+setInterval(fetchDepartureBoard, 20000)

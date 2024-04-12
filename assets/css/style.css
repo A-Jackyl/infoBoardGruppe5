@@ -282,7 +282,6 @@ p {
     width: 60px;
     position: absolute;
     top: 18px;
-    left: 238px;
     animation: drive 2s infinite ease-in-out;
 }
 
@@ -309,7 +308,7 @@ p {
     width: 100%;
     margin: 0px auto;
     height: 5px;
-    background-color: var(--magenta);
+    background-color: var(--black);
     position: absolute;
     top: 44px;
 }
