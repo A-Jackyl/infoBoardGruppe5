@@ -31,5 +31,7 @@ function updateClockAndDate() {
 
 }
 
+updateClockAndDate()
+
 // Call updateClockAndDate every second to update the time and date
 setInterval(updateClockAndDate, 1000);

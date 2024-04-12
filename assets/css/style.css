@@ -247,14 +247,16 @@ p {
 }
 
 #bus_times {
-    margin-block: 3rem;
+    margin-block: 2rem 3rem;
 }
 
 .bus_time_item {
     display: flex;
     justify-content: space-between;
     margin: 1rem 1rem;
+    margin-bottom: 5rem;
     align-items: center;
+    position: relative;
 }
 
 .bus_dest {
@@ -266,6 +268,50 @@ p {
     border-radius: 3px;
     padding: .3rem;
     border: 2px solid var(--black);
+}
+
+.bus_animation {
+    width: 100%;
+    position: absolute;
+    height: 50px;
+    top: 35px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.bus_icon {
+    width: 60px;
+    position: absolute;
+    top: 18px;
+    left: 238px;
+    animation: drive 2s infinite ease-in-out;
+}
+
+@keyframes drive {
+    0% {
+        transform: translateY(0px) scaleY(100%);
+    }
+    50% {
+        transform: translateY(2px) scaleY(95%);
+    }
+    100% {
+        transform: translateY(0px) scaleY(100%);
+    }
+}
+
+.school_icon {
+    width: 40px;
+    right: 0px;
+    top: 14px;
+    position: absolute;
+}
+
+.bus_line {
+    width: 100%;
+    margin: 0px auto;
+    height: 5px;
+    background-color: var(--magenta);
+    position: absolute;
+    top: 44px;
 }
 
 /* CLASS ACTIVITIES */

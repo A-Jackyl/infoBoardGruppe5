@@ -10,7 +10,7 @@ async function fetchDepartureBoard() {
         let counter = 0;
 
         data.MultiDepartureBoard.Departure.forEach(departure => {
-            if (counter < 8) { // Limit to 6 departures
+            if (counter < 4) { // Limit to 6 departures
                 const departureElement = document.createElement('li');
                 departureElement.classList.add('bus_time_item');
                 const line = departure.line || departure.sname;
@@ -24,14 +24,25 @@ async function fetchDepartureBoard() {
                 const departureTime = new Date();
                 departureTime.setHours(parseInt(hour, 10));
                 departureTime.setMinutes(parseInt(minute, 10));
+                console.log(departureTime);
 
                 // Calculate time difference in minutes
                 const timeDifference = Math.max(Math.ceil((departureTime - currentTime) / 1000 / 60), 0); // in minutes
+                console.log(timeDifference);
+
+                const busDistance = 238-(-19.866*timeDifference)
+
 
                 departureElement.innerHTML = `
                     <p class="bus_number">${line}</p>
                     <p class="bus_dest">${direction}</p>
-                    <p class="bus_arrival">${timeDifference} min</p>`;
+                    <p class="bus_arrival">${timeDifference} min</p>
+                    <div class="bus_animation">
+                        <img class="school_icon" src="assets/img/school.svg" alt="">
+                        <img style="left: ${busDistance}px;" class="bus_icon" src="assets/img/bus.svg" alt="">
+                        <div class="bus_line"></div>
+                    </div>
+                    `;
                 departureBoardElement.appendChild(departureElement);
 
                 counter++;
@@ -44,4 +55,6 @@ async function fetchDepartureBoard() {
     }
 }
 
-setInterval(fetchDepartureBoard, 1000)
+fetchDepartureBoard()
+
+/* setInterval(fetchDepartureBoard, 20000) */

@@ -1,6 +1,7 @@
 async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/schedules?departmentcode=smed')
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         const container = document.getElementById('schedule');
         let sortedDates = data.value   
           function compareDates(a, b) {
@@ -119,7 +120,7 @@ async function fetchDataAndRender() {fetch('https://iws.itcn.dk/techcollege/sche
             });
         
             if (counter === 0) {
-                container.innerHTML = '<p>No data available</p>';
+                container.innerHTML = '<p style="text-align: center; font-size: 2rem; height: 100%; margin: 6rem">Ingen timer tilbage!</p>';
             }
         } else {
             container.innerHTML = '<p>No data available</p>';
